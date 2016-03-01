@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero-detail.component', './hero.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './hero-detail.component', './hero.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,12 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_detail_component_1, hero_service_1;
+    var core_1, hero_detail_component_1, hero_service_1;
     var HeroesComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             },
             function (hero_detail_component_1_1) {
                 hero_detail_component_1 = hero_detail_component_1_1;
@@ -30,18 +27,18 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
             HeroesComponent = (function () {
                 // // It can infer what type it is from the HEROES array below, so we don't need to tell it.
                 //   public heroes = HEROES;
-                function HeroesComponent(_router, _heroService) {
-                    this._router = _router;
+                function HeroesComponent(_heroService) {
                     this._heroService = _heroService;
                 }
+                HeroesComponent.prototype.ngOnInit = function () {
+                    this.getHeroes();
+                };
                 //we call getHeroes NOT in the constructor but in ngOnlnit.
                 HeroesComponent.prototype.getHeroes = function () {
                     var _this = this;
                     //retrieving data from the promise.
-                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-                };
-                HeroesComponent.prototype.ngOnInit = function () {
-                    this.getHeroes();
+                    this._heroService.getHeroes()
+                        .subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
                 };
                 HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 HeroesComponent.prototype.gotoDetail = function () {
@@ -52,10 +49,10 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
                         selector: 'my-heroes',
                         templateUrl: 'app/heroes.component.html',
                         styleUrls: ['app/heroes.component.css'],
-                        // this tells Angular that it exists    
+                        // this tells Angular that it exists
                         directives: [hero_detail_component_1.HeroDetailComponent]
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
+                    __metadata('design:paramtypes', [hero_service_1.HeroService])
                 ], HeroesComponent);
                 return HeroesComponent;
             }());

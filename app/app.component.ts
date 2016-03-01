@@ -1,6 +1,5 @@
 import { Component } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-
+import {HTTP_PROVIDERS}    from 'angular2/http';
 import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
@@ -17,30 +16,30 @@ import { HeroDetailComponent } from './hero-detail.component';
     <router-outlet></router-outlet>
   `,
   styleUrls: ['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [HeroesComponent],
   providers: [
-    ROUTER_PROVIDERS,
+    HTTP_PROVIDERS,
     HeroService
   ]
 })
-@RouteConfig([
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: DashboardComponent,
-    useAsDefault: true
-  },
-  {
-    path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
-  },
-  {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
-  }
-])
+// @RouteConfig([
+//   {
+//     path: '/dashboard',
+//     name: 'Dashboard',
+//     component: DashboardComponent,
+//     useAsDefault: true
+//   },
+//   {
+//     path: '/detail/:id',
+//     name: 'HeroDetail',
+//     component: HeroDetailComponent
+//   },
+//   {
+//     path: '/heroes',
+//     name: 'Heroes',
+//     component: HeroesComponent
+//   }
+// ])
 export class AppComponent {
   title = 'Back Pocket Games';
 }
