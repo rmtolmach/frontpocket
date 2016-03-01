@@ -1,4 +1,4 @@
-System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_1) {
+System.register(['./mock-heroes', 'angular2/core', 'angular2/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var mock_heroes_1, core_1;
+    var mock_heroes_1, core_1, http_1;
     var HeroService;
     return {
         setters:[
@@ -19,12 +19,22 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
             // parentheses are important!
             HeroService = (function () {
-                function HeroService() {
+                //Constructor example
+                function HeroService(http) {
+                    this.http = http;
                 }
+                HeroService.prototype.postHeroes = function (data) {
+                    //first part is a promise that will result in data. Second part says map that data to data.json (like .map with res.json inside of the function)
+                    this.http.post(URL, data).map(function (res) { return res.json(); });
+                };
+                ////  //////   ////
                 HeroService.prototype.getHeroes = function () {
                     return Promise.resolve(mock_heroes_1.HEROES);
                 };
@@ -33,7 +43,7 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
                 };
                 HeroService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], HeroService);
                 return HeroService;
             }());
