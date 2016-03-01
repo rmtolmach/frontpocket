@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', './hero.service', './heroes.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', './game.service', './games.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', './hero.service', './heroes.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, hero_service_1, heroes_component_1;
+    var core_1, http_1, game_service_1, games_component_1;
     var AppComponent;
     return {
         setters:[
@@ -20,11 +20,11 @@ System.register(['angular2/core', 'angular2/http', './hero.service', './heroes.c
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
+            function (game_service_1_1) {
+                game_service_1 = game_service_1_1;
             },
-            function (heroes_component_1_1) {
-                heroes_component_1 = heroes_component_1_1;
+            function (games_component_1_1) {
+                games_component_1 = games_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -34,12 +34,12 @@ System.register(['angular2/core', 'angular2/http', './hero.service', './heroes.c
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <my-heroes></my-heroes>\n  ",
+                        template: "\n    <h1>{{title}}</h1>\n    <my-games></my-games>\n  ",
                         styleUrls: ['app/app.component.css'],
-                        directives: [heroes_component_1.HeroesComponent],
+                        directives: [games_component_1.GamesComponent],
                         providers: [
                             http_1.HTTP_PROVIDERS,
-                            hero_service_1.HeroService
+                            game_service_1.GameService
                         ]
                     }), 
                     __metadata('design:paramtypes', [])

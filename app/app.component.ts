@@ -1,21 +1,21 @@
 import { Component } from 'angular2/core';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import { HeroService } from './hero.service';
+import { GameService } from './game.service';
 import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { GamesComponent } from './games.component';
+import { GameDetailComponent } from './game-detail.component';
 
 @Component({
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <my-heroes></my-heroes>
+    <my-games></my-games>
   `,
   styleUrls: ['app/app.component.css'],
-  directives: [HeroesComponent],
+  directives: [GamesComponent],
   providers: [
     HTTP_PROVIDERS,
-    HeroService
+    GameService
   ]
 })
 

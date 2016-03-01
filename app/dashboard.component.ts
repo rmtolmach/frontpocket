@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
-import { Game } from './hero';
-import { HeroService } from './hero.service';
+import { Game } from './game';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'my-dashboard',
@@ -9,17 +9,17 @@ import { HeroService } from './hero.service';
   styleUrls: ['app/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Game[] = [];
+  games: Game[] = [];
 
   constructor(private _router: Router,
-    private _heroService: HeroService) { }
+    private _gameService: GameService) { }
 
   ngOnInit() {
-    this._heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1,5));
+    this._gameService.getGames()
+      .then(games => this.games = games.slice(1,5));
   }
-  gotoDetail(hero: Game) {
-    let link = ['HeroDetail', { id: hero.id }];
+  gotoDetail(game: Game) {
+    let link = ['GameDetail', { id: game.id }];
     this._router.navigate(link);
   }
 }

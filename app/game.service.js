@@ -1,4 +1,4 @@
-System.register(['./mock-heroes', 'angular2/core', 'angular2/http', 'rxjs/Observable'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,13 +10,10 @@ System.register(['./mock-heroes', 'angular2/core', 'angular2/http', 'rxjs/Observ
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var mock_heroes_1, core_1, http_1, Observable_1;
-    var HeroService;
+    var core_1, http_1, Observable_1;
+    var GameService;
     return {
         setters:[
-            function (mock_heroes_1_1) {
-                mock_heroes_1 = mock_heroes_1_1;
-            },
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -28,35 +25,37 @@ System.register(['./mock-heroes', 'angular2/core', 'angular2/http', 'rxjs/Observ
             }],
         execute: function() {
             // parentheses are important!
-            HeroService = (function () {
-                function HeroService(http) {
+            GameService = (function () {
+                function GameService(http) {
                     this.http = http;
+                    // getGame(id: number) {
+                    //   return Promise.resolve(GAMES).then(
+                    //     games => games.filter(game => game.id === id)[0]
+                    // );
+                    // }
                     this._gamesUrl = 'http://localhost:3001/games'; // URL to JSON file
                 }
-                //this get request won't go out until something subscribes to the observable (in this case, the HeroComponent)
-                HeroService.prototype.getHeroes = function () {
+                //this get request won't go out until something subscribes to the observable (in this case, the GameComponent)
+                GameService.prototype.getGames = function () {
                     return this.http.get(this._gamesUrl)
                         .map(function (res) { return res.json(); })
                         .do(function (data) { return console.log(data); })
                         .catch(this.handleError);
                 };
-                HeroService.prototype.getHero = function (id) {
-                    return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
-                };
-                HeroService.prototype.handleError = function (error) {
+                GameService.prototype.handleError = function (error) {
                     // in a real world app, we may send the error to some remote logging infrastructure
                     // instead of just logging it to the console
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
-                HeroService = __decorate([
+                GameService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], HeroService);
-                return HeroService;
+                ], GameService);
+                return GameService;
             }());
-            exports_1("HeroService", HeroService);
+            exports_1("GameService", GameService);
         }
     }
 });
-//# sourceMappingURL=hero.service.js.map
+//# sourceMappingURL=game.service.js.map

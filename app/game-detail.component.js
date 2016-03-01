@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './hero.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './game.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_service_1;
-    var HeroDetailComponent;
+    var core_1, router_1, game_service_1;
+    var GameDetailComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -20,36 +20,36 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
+            function (game_service_1_1) {
+                game_service_1 = game_service_1_1;
             }],
         execute: function() {
-            HeroDetailComponent = (function () {
-                function HeroDetailComponent(_heroService, _routeParams) {
-                    this._heroService = _heroService;
+            GameDetailComponent = (function () {
+                function GameDetailComponent(_gameService, _routeParams) {
+                    this._gameService = _gameService;
                     this._routeParams = _routeParams;
                 }
                 //Route parameters are always strings. So we convert the route parameter value to a number with the JavaScript (+) operator.
-                HeroDetailComponent.prototype.ngOnInit = function () {
+                GameDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
-                    this._heroService.getHero(id)
-                        .then(function (hero) { return _this.hero = hero; });
+                    this._gameService.getGame(id)
+                        .then(function (game) { return _this.game = game; });
                 };
-                HeroDetailComponent.prototype.goBack = function () {
+                GameDetailComponent.prototype.goBack = function () {
                     window.history.back();
                 };
-                HeroDetailComponent = __decorate([
+                GameDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'heroes',
-                        templateUrl: 'app/hero-detail.component.html',
+                        selector: 'games',
+                        templateUrl: 'app/game-detail.component.html',
                     }), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
-                ], HeroDetailComponent);
-                return HeroDetailComponent;
+                    __metadata('design:paramtypes', [game_service_1.GameService, router_1.RouteParams])
+                ], GameDetailComponent);
+                return GameDetailComponent;
             }());
-            exports_1("HeroDetailComponent", HeroDetailComponent);
+            exports_1("GameDetailComponent", GameDetailComponent);
         }
     }
 });
-//# sourceMappingURL=hero-detail.component.js.map
+//# sourceMappingURL=game-detail.component.js.map
