@@ -41,9 +41,6 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
                         .subscribe(function (heroes) { return _this.heroes = heroes; }, function (error) { return _this.errorMessage = error; });
                 };
                 HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
-                HeroesComponent.prototype.gotoDetail = function () {
-                    this._router.navigate(['HeroDetail', { id: this.selectedHero.name }]);
-                };
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',

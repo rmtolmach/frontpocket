@@ -1,4 +1,4 @@
-System.register(['./mock-heroes', 'angular2/core', 'angular2/http'], function(exports_1, context_1) {
+System.register(['./mock-heroes', 'angular2/core', 'angular2/http', 'rxjs/Observable'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./mock-heroes', 'angular2/core', 'angular2/http'], function(ex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var mock_heroes_1, core_1, http_1;
+    var mock_heroes_1, core_1, http_1, Observable_1;
     var HeroService;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['./mock-heroes', 'angular2/core', 'angular2/http'], function(ex
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
             }],
         execute: function() {
             // parentheses are important!
@@ -29,17 +32,28 @@ System.register(['./mock-heroes', 'angular2/core', 'angular2/http'], function(ex
                 //Constructor example
                 function HeroService(http) {
                     this.http = http;
+                    this._gamesUrl = 'http://localhost:3001/games'; // URL to JSON file
                 }
-                HeroService.prototype.postHeroes = function (data) {
-                    //first part is a promise that will result in data. Second part says map that data to data.json (like .map with res.json inside of the function)
-                    this.http.post(URL, data).map(function (res) { return res.json(); });
-                };
+                //   postHeroes(data) {
+                // //first part is a promise that will result in data. Second part says map that data to data.json (like .map with res.json inside of the function)
+                //     this.http.post(URL, data).map(res => res.json())
+                //   }
                 ////  //////   ////
+                //this get request won't go out until something subscribes to the observable (in this case, the HeroComponent)
                 HeroService.prototype.getHeroes = function () {
-                    return Promise.resolve(mock_heroes_1.HEROES);
+                    return this.http.get(this._gamesUrl)
+                        .map(function (res) { return res.json(); })
+                        .do(function (data) { return console.log(data); })
+                        .catch(this.handleError);
                 };
                 HeroService.prototype.getHero = function (id) {
                     return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
+                };
+                HeroService.prototype.handleError = function (error) {
+                    // in a real world app, we may send the error to some remote logging infrastructure
+                    // instead of just logging it to the console
+                    console.error(error);
+                    return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
                 HeroService = __decorate([
                     core_1.Injectable(), 

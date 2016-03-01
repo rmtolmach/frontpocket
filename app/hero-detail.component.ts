@@ -6,7 +6,7 @@ import {Game} from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
-  selector: 'my-hero-detail',
+  selector: 'heroes',
   templateUrl: 'app/hero-detail.component.html',
   // inputs: ['hero']
 

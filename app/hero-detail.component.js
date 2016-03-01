@@ -41,7 +41,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                 };
                 HeroDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-hero-detail',
+                        selector: 'heroes',
                         templateUrl: 'app/hero-detail.component.html',
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])

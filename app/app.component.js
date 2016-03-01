@@ -34,7 +34,7 @@ System.register(['angular2/core', 'angular2/http', './hero.service', './heroes.c
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['Heroes']\">Games</a>\n    </nav>\n    <router-outlet></router-outlet>\n  ",
+                        template: "\n    <h1>{{title}}</h1>\n    <my-heroes></my-heroes>\n  ",
                         styleUrls: ['app/app.component.css'],
                         directives: [heroes_component_1.HeroesComponent],
                         providers: [

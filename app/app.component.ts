@@ -9,11 +9,7 @@ import { HeroDetailComponent } from './hero-detail.component';
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <nav>
-      <a [routerLink]="['Dashboard']">Dashboard</a>
-      <a [routerLink]="['Heroes']">Games</a>
-    </nav>
-    <router-outlet></router-outlet>
+    <my-heroes></my-heroes>
   `,
   styleUrls: ['app/app.component.css'],
   directives: [HeroesComponent],
