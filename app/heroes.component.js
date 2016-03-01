@@ -26,7 +26,6 @@ System.register(['angular2/core', './hero-detail.component', './hero.service'], 
         execute: function() {
             HeroesComponent = (function () {
                 // // It can infer what type it is from the HEROES array below, so we don't need to tell it.
-                //   public heroes = HEROES;
                 function HeroesComponent(_heroService) {
                     this._heroService = _heroService;
                 }

@@ -17,7 +17,6 @@ export class HeroesComponent implements OnInit {
   selectedHero: Game;
   errorMessage: string;
 // // It can infer what type it is from the HEROES array below, so we don't need to tell it.
-//   public heroes = HEROES;
   constructor(private _heroService: HeroService) { }
 
   ngOnInit() {

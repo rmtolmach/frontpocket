@@ -29,16 +29,10 @@ System.register(['./mock-heroes', 'angular2/core', 'angular2/http', 'rxjs/Observ
         execute: function() {
             // parentheses are important!
             HeroService = (function () {
-                //Constructor example
                 function HeroService(http) {
                     this.http = http;
                     this._gamesUrl = 'http://localhost:3001/games'; // URL to JSON file
                 }
-                //   postHeroes(data) {
-                // //first part is a promise that will result in data. Second part says map that data to data.json (like .map with res.json inside of the function)
-                //     this.http.post(URL, data).map(res => res.json())
-                //   }
-                ////  //////   ////
                 //this get request won't go out until something subscribes to the observable (in this case, the HeroComponent)
                 HeroService.prototype.getHeroes = function () {
                     return this.http.get(this._gamesUrl)

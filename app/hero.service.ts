@@ -5,20 +5,12 @@ import {Injectable} from 'angular2/core';
 import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 
-
 // parentheses are important!
 @Injectable()
 // HeroService can get data from ANYWHERE! local storage, an api, mock data whatevs (like the heroes array).
 export class HeroService {
 
-//Constructor example
   constructor(public http: Http) {}
-
-//   postHeroes(data) {
-// //first part is a promise that will result in data. Second part says map that data to data.json (like .map with res.json inside of the function)
-//     this.http.post(URL, data).map(res => res.json())
-//   }
-////  //////   ////
 //this get request won't go out until something subscribes to the observable (in this case, the HeroComponent)
   getHeroes() {
     return this.http.get(this._gamesUrl)

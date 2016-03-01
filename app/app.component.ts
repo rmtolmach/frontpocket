@@ -18,24 +18,7 @@ import { HeroDetailComponent } from './hero-detail.component';
     HeroService
   ]
 })
-// @RouteConfig([
-//   {
-//     path: '/dashboard',
-//     name: 'Dashboard',
-//     component: DashboardComponent,
-//     useAsDefault: true
-//   },
-//   {
-//     path: '/detail/:id',
-//     name: 'HeroDetail',
-//     component: HeroDetailComponent
-//   },
-//   {
-//     path: '/heroes',
-//     name: 'Heroes',
-//     component: HeroesComponent
-//   }
-// ])
+
 export class AppComponent {
   title = 'Back Pocket Games';
 }
