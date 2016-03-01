@@ -9,7 +9,7 @@ import {GameService} from './game.service';
     templateUrl: 'app/games.component.html',
     styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists
-    directives: [GameDetailComponent]
+    // directives: [GameDetailComponent]
 })
 // AppComponent is the same name as the file. the word component is the key. AppComponent is the top level component in the application. There should be only one instance of GameService in the whole app.
 export class GamesComponent implements OnInit {
