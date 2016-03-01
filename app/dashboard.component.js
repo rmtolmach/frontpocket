@@ -35,8 +35,8 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                     this._gameService.getGames()
                         .then(function (games) { return _this.games = games.slice(1, 5); });
                 };
-                DashboardComponent.prototype.gotoDetail = function (game) {
-                    var link = ['GameDetail', { id: game.id }];
+                DashboardComponent.prototype.gotoForm = function (game) {
+                    var link = ['GameForm', { id: game.id }];
                     this._router.navigate(link);
                 };
                 DashboardComponent = __decorate([

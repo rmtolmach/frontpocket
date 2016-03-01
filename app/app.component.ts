@@ -3,7 +3,7 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
 import { GameService } from './game.service';
 import { DashboardComponent } from './dashboard.component';
 import { GamesComponent } from './games.component';
-import { GameDetailComponent } from './game-detail.component';
+import { GameFormComponent } from './game-form.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 
@@ -11,7 +11,6 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <my-games></my-games>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['app/app.component.css'],
@@ -24,7 +23,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 
 @RouteConfig([
   {path:'/',        name: 'Games',       component: GamesComponent},
-  {path:'/games',      name: 'GameDetail',   component: GameDetailComponent}
+  {path:'/games',      name: 'GameForm',   component: GameFormComponent}
 ])
 
 export class AppComponent {

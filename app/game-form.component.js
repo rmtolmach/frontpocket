@@ -11,7 +11,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, game_service_1;
-    var GameDetailComponent;
+    var GameFormComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,32 +24,31 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                 game_service_1 = game_service_1_1;
             }],
         execute: function() {
-            GameDetailComponent = (function () {
-                function GameDetailComponent(_gameService, _routeParams) {
+            GameFormComponent = (function () {
+                function GameFormComponent(_gameService, _routeParams) {
                     this._gameService = _gameService;
                     this._routeParams = _routeParams;
                 }
                 //Route parameters are always strings. So we convert the route parameter value to a number with the JavaScript (+) operator.
-                GameDetailComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    var id = +this._routeParams.get('id');
-                    this._gameService.getGame(id)
-                        .then(function (game) { return _this.game = game; });
+                GameFormComponent.prototype.ngOnInit = function () {
+                    // let id = +this._routeParams.get('id');
+                    // this._gameService.getGame(id)
+                    //   .then(game => this.game = game);
                 };
-                GameDetailComponent.prototype.goBack = function () {
+                GameFormComponent.prototype.goBack = function () {
                     window.history.back();
                 };
-                GameDetailComponent = __decorate([
+                GameFormComponent = __decorate([
                     core_1.Component({
-                        selector: 'games',
-                        templateUrl: 'app/game-detail.component.html',
+                        // selector: 'games',
+                        templateUrl: 'app/game-form.component.html',
                     }), 
                     __metadata('design:paramtypes', [game_service_1.GameService, router_1.RouteParams])
-                ], GameDetailComponent);
-                return GameDetailComponent;
+                ], GameFormComponent);
+                return GameFormComponent;
             }());
-            exports_1("GameDetailComponent", GameDetailComponent);
+            exports_1("GameFormComponent", GameFormComponent);
         }
     }
 });
-//# sourceMappingURL=game-detail.component.js.map
+//# sourceMappingURL=game-form.component.js.map

@@ -36,10 +36,9 @@ System.register(['angular2/core', './game.service'], function(exports_1, context
                     this._gameService.getGames()
                         .subscribe(function (games) { return _this.games = games; }, function (error) { return _this.errorMessage = error; });
                 };
-                GamesComponent.prototype.onSelect = function (game) { this.selectedGame = game; };
                 GamesComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-games',
+                        // selector: 'my-games',
                         templateUrl: 'app/games.component.html',
                         styleUrls: ['app/games.component.css'],
                     }), 

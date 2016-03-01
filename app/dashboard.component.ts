@@ -18,8 +18,8 @@ export class DashboardComponent implements OnInit {
     this._gameService.getGames()
       .then(games => this.games = games.slice(1,5));
   }
-  gotoDetail(game: Game) {
-    let link = ['GameDetail', { id: game.id }];
+  gotoForm(game: Game) {
+    let link = ['GameForm', { id: game.id }];
     this._router.navigate(link);
   }
 }
