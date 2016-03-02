@@ -4,6 +4,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Game} from './game';
 import {GameFormComponent} from './game-form.component';
 import {GameService} from './game.service';
+
 @Component({
     // selector: 'my-games',
     templateUrl: 'app/games.component.html',

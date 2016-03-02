@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './game.service'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,40 +10,28 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, game_service_1;
+    var core_1;
     var GameFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            },
-            function (game_service_1_1) {
-                game_service_1 = game_service_1_1;
             }],
         execute: function() {
             GameFormComponent = (function () {
-                function GameFormComponent(_gameService, _routeParams) {
-                    this._gameService = _gameService;
-                    this._routeParams = _routeParams;
+                function GameFormComponent() {
+                    this.equipment = ['none', 'ball (soft)',
+                        'ball', 'boombox'];
+                    // model = new Game(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+                    this.submitted = false;
                 }
-                //Route parameters are always strings. So we convert the route parameter value to a number with the JavaScript (+) operator.
-                GameFormComponent.prototype.ngOnInit = function () {
-                    // let id = +this._routeParams.get('id');
-                    // this._gameService.getGame(id)
-                    //   .then(game => this.game = game);
-                };
-                GameFormComponent.prototype.goBack = function () {
-                    window.history.back();
-                };
+                GameFormComponent.prototype.onSubmit = function () { this.submitted = true; };
                 GameFormComponent = __decorate([
                     core_1.Component({
-                        // selector: 'games',
-                        templateUrl: 'app/game-form.component.html',
+                        // selector: 'game-form',
+                        templateUrl: 'app/game-form.component.html'
                     }), 
-                    __metadata('design:paramtypes', [game_service_1.GameService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [])
                 ], GameFormComponent);
                 return GameFormComponent;
             }());
@@ -51,4 +39,36 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
         }
     }
 });
+// // this is a reusable component.
+// import {Component, OnInit} from 'angular2/core';
+// import {RouteParams} from 'angular2/router';
+//
+// import {Game} from './game';
+// import { GameService } from './game.service';
+//
+// @Component({
+//   // selector: 'games',
+//   templateUrl: 'app/game-form.component.html',
+//   // inputs: ['game']
+//
+// })
+// export class GameFormComponent {
+//   game: Game;
+//
+//   constructor(
+//   private _gameService: GameService,
+//   private _routeParams: RouteParams) {
+// }
+// //Route parameters are always strings. So we convert the route parameter value to a number with the JavaScript (+) operator.
+//   ngOnInit() {
+//     // let id = +this._routeParams.get('id');
+//     // this._gameService.getGame(id)
+//     //   .then(game => this.game = game);
+// }
+//   goBack() {
+//     window.history.back();
+// }
+//
+//
+// }
 //# sourceMappingURL=game-form.component.js.map
