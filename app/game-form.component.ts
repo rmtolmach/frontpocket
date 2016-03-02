@@ -10,11 +10,18 @@ import {GameService} from './game.service';
 export class GameFormComponent {
   equipment = ['none', 'ball (soft)',
             'ball', 'boombox'];
-  // model = new Game(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  model = new Game(2, 'radar', 'keys', this.equipment[0], false);
   submitted = false;
   onSubmit() { this.submitted = true; }
   // TODO: Remove this when we're done
   // get diagnostic() { return JSON.stringify(this.model); }
+  active = true;
+
+  newGame() {
+    this.model = new Game(42, '', '', '', false);
+    this.active = false;
+    setTimeout(()=> this.active=true, 0);
+  }
 }
 
 

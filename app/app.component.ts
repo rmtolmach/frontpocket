@@ -6,7 +6,6 @@ import { GamesComponent } from './games.component';
 import { GameFormComponent } from './game-form.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-
 @Component({
   selector: 'my-app',
   template: `
@@ -22,8 +21,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 })
 
 @RouteConfig([
-  {path:'/',        name: 'Games',       component: GamesComponent},
-  {path:'/games',      name: 'GameForm',   component: GameFormComponent}
+  {path:'/',        name: 'GameForm',       component: GameFormComponent},
+  {path:'/games',      name: 'Games',   component: GamesComponent}
 ])
 
 export class AppComponent {

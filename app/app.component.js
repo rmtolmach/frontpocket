@@ -49,8 +49,8 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
                         ]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', name: 'Games', component: games_component_1.GamesComponent },
-                        { path: '/games', name: 'GameForm', component: game_form_component_1.GameFormComponent }
+                        { path: '/', name: 'GameForm', component: game_form_component_1.GameFormComponent },
+                        { path: '/games', name: 'Games', component: games_component_1.GamesComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

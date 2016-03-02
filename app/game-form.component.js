@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './game'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,22 +10,34 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, game_1;
     var GameFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (game_1_1) {
+                game_1 = game_1_1;
             }],
         execute: function() {
             GameFormComponent = (function () {
                 function GameFormComponent() {
                     this.equipment = ['none', 'ball (soft)',
                         'ball', 'boombox'];
-                    // model = new Game(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+                    this.model = new game_1.Game(2, 'radar', 'keys', this.equipment[0], false);
                     this.submitted = false;
+                    // TODO: Remove this when we're done
+                    // get diagnostic() { return JSON.stringify(this.model); }
+                    this.active = true;
                 }
                 GameFormComponent.prototype.onSubmit = function () { this.submitted = true; };
+                GameFormComponent.prototype.newGame = function () {
+                    var _this = this;
+                    this.model = new game_1.Game(42, '', '', '', false);
+                    this.active = false;
+                    setTimeout(function () { return _this.active = true; }, 0);
+                };
                 GameFormComponent = __decorate([
                     core_1.Component({
                         // selector: 'game-form',
