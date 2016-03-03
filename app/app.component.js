@@ -44,6 +44,7 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
                         styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
+                            router_1.ROUTER_PROVIDERS,
                             http_1.HTTP_PROVIDERS,
                             game_service_1.GameService
                         ]

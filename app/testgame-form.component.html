@@ -1,6 +1,5 @@
-<h1>THIS IS WORKING</h1>
 <div class="ui raised segment">
-    <h2 class="ui header">Demo Form: Sku</h2>
+    <h2 class="ui header">Test Form</h2>
 <!-- ngForm is automatically attached to any form tags I have     -->
     <form #f="ngForm"
           (ngSubmit)="onSubmit(f.value)"
@@ -8,13 +7,9 @@
 
       <div class="field">
         <label for="skuInput">Equipment</label>
-        <select>
-          <option *ngFor="#e of equipment" [value]="e">{{e}}</option>
+        <select ngControl="equipment">
+          <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
         </select>
-        <input type="text"
-               id="skuInput"
-               placeholder="SKU"
-               ngControl="sku">
       </div>
 
       <button type="submit" class="ui button">Submit</button>

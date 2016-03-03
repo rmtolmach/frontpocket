@@ -16,6 +16,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
   styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [
+    ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     GameService
   ]
