@@ -1,7 +1,7 @@
 import {Pipe} from "angular2/core";
 
 @Pipe ({
-  name: "filter"
+  name: "my_filter"
 })
 
 export class FilterPipe{

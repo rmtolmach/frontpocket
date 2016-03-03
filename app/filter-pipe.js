@@ -26,7 +26,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 };
                 FilterPipe = __decorate([
                     core_1.Pipe({
-                        name: "filter"
+                        name: "my_filter"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FilterPipe);
