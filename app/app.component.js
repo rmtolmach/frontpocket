@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', './game.service', './games.component', './game-form.component', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', './game.service', './games.component', './testgame-form.component', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, game_service_1, games_component_1, game_form_component_1, router_1;
+    var core_1, http_1, game_service_1, games_component_1, testgame_form_component_1, router_1;
     var AppComponent;
     return {
         setters:[
@@ -26,8 +26,8 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
             function (games_component_1_1) {
                 games_component_1 = games_component_1_1;
             },
-            function (game_form_component_1_1) {
-                game_form_component_1 = game_form_component_1_1;
+            function (testgame_form_component_1_1) {
+                testgame_form_component_1 = testgame_form_component_1_1;
             },
             function (router_1_1) {
                 router_1 = router_1_1;
@@ -40,7 +40,7 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <router-outlet></router-outlet>\n  ",
+                        template: "\n    <h1>{{title}}</h1>\n    <router-outlet></router-outlet>\n    <testgame-form></testgame-form>\n  ",
                         styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
@@ -49,7 +49,7 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
                         ]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', name: 'GameForm', component: game_form_component_1.GameFormComponent },
+                        { path: '/', name: 'GameForm', component: testgame_form_component_1.TestGameFormComponent },
                         { path: '/games', name: 'Games', component: games_component_1.GamesComponent }
                     ]), 
                     __metadata('design:paramtypes', [])

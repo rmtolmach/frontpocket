@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 // import { Router } from 'angular2/router';
 // so when I use the word, Game, it knows what I'm talking about.
 import {Game} from './game';
-import {GameFormComponent} from './game-form.component';
+import {TestGameFormComponent} from './testgame-form.component';
 import {GameService} from './game.service';
 
 // import {FilterPipe} from './filter-pipe';
