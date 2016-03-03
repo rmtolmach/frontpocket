@@ -19,7 +19,7 @@ export class TestGameFormComponent {
 
   onSubmit(value: string): void {
     console.log('you submitted value: ', value);
-    this._router.navigate(['Games'])
+    this._router.navigate(['Games',  value ])
   }
 }
 

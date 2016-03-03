@@ -31,7 +31,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                 }
                 TestGameFormComponent.prototype.onSubmit = function (value) {
                     console.log('you submitted value: ', value);
-                    this._router.navigate(['Games']);
+                    this._router.navigate(['Games', value]);
                 };
                 TestGameFormComponent = __decorate([
                     core_1.Component({
