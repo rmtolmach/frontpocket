@@ -7,7 +7,10 @@
           class="ui form">
 
       <div class="field">
-        <label for="skuInput">SKU</label>
+        <label for="skuInput">Equipment</label>
+        <select>
+          <option *ngFor="#e of equipment" [value]="e">{{e}}</option>
+        </select>
         <input type="text"
                id="skuInput"
                placeholder="SKU"

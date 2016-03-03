@@ -23,6 +23,7 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
         execute: function() {
             TestGameFormComponent = (function () {
                 function TestGameFormComponent() {
+                    this.equipment = ['none', 'ball (soft)', 'ball', 'boombox'];
                 }
                 TestGameFormComponent.prototype.onSubmit = function (value) {
                     console.log('you submitted value: ', value);

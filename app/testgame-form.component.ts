@@ -10,6 +10,8 @@ import { FORM_DIRECTIVES } from 'angular2/common';
 })
 export class TestGameFormComponent {
 
+  equipment = ['none', 'ball (soft)', 'ball', 'boombox'];
+
   onSubmit(value: string): void {
     console.log('you submitted value: ', value);
   }
