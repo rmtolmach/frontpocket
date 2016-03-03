@@ -5,10 +5,10 @@ import {Game} from './game';
 import {GameFormComponent} from './game-form.component';
 import {GameService} from './game.service';
 
-import {FilterPipe} from './filter-pipe';
+// import {FilterPipe} from './filter-pipe';
 @Component({
     // selector: 'my-games',
-    pipes: [FilterPipe],
+    // pipes: [FilterPipe],
     templateUrl: 'app/games.component.html',
     styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists
