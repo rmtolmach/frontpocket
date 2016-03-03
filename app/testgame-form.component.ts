@@ -12,10 +12,15 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
   templateUrl: 'app/testgame-form.component.html'
 })
 export class TestGameFormComponent {
-  constructor(
-  private _router: Router) { }
+  private _chosenEquip: string;
 
-  equipment = ['none', 'ball (soft)', 'ball', 'boombox'];
+  constructor(
+      
+    private _router: Router,
+    routeParams: RouteParams) {
+      this._chosenEquip = routeParams.get('equipment')}
+
+    equipment = ['none', 'ball (soft)', 'ball', 'boombox'];
 
   onSubmit(value: string): void {
     console.log('you submitted value: ', value);
