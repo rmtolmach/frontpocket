@@ -6,10 +6,12 @@ import {TestGameFormComponent} from './testgame-form.component';
 import {GameService} from './game.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import {EquipmentPipe} from './filter-pipe';
+import {EquipmentPipe} from './equipment-pipe';
+import {NoisePipe} from './noise-pipe';
+
 @Component({
     // selector: 'my-games',
-    pipes: [EquipmentPipe],
+    pipes: [EquipmentPipe, NoisePipe],
     templateUrl: 'app/games.component.html',
     styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists

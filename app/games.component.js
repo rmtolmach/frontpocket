@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './game.service', './filter-pipe'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './game.service', './equipment-pipe', './noise-pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './game.service', './filter
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, game_service_1, filter_pipe_1;
+    var core_1, router_1, game_service_1, equipment_pipe_1, noise_pipe_1;
     var GamesComponent;
     return {
         setters:[
@@ -23,8 +23,11 @@ System.register(['angular2/core', 'angular2/router', './game.service', './filter
             function (game_service_1_1) {
                 game_service_1 = game_service_1_1;
             },
-            function (filter_pipe_1_1) {
-                filter_pipe_1 = filter_pipe_1_1;
+            function (equipment_pipe_1_1) {
+                equipment_pipe_1 = equipment_pipe_1_1;
+            },
+            function (noise_pipe_1_1) {
+                noise_pipe_1 = noise_pipe_1_1;
             }],
         execute: function() {
             GamesComponent = (function () {
@@ -49,7 +52,7 @@ System.register(['angular2/core', 'angular2/router', './game.service', './filter
                 GamesComponent = __decorate([
                     core_1.Component({
                         // selector: 'my-games',
-                        pipes: [filter_pipe_1.EquipmentPipe],
+                        pipes: [equipment_pipe_1.EquipmentPipe, noise_pipe_1.NoisePipe],
                         templateUrl: 'app/games.component.html',
                         styleUrls: ['app/games.component.css'],
                     }), 
