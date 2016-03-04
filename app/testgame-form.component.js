@@ -25,10 +25,13 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
             }],
         execute: function() {
             TestGameFormComponent = (function () {
-                function TestGameFormComponent(_router, routeParams) {
+                // private _chosenEquip: string;
+                function TestGameFormComponent(_router) {
                     this._router = _router;
+                    // private _router: Router,
+                    // routeParams: RouteParams) {
+                    //   this._chosenEquip = routeParams.get('equipment')};
                     this.equipment = ['none', 'ball (soft)', 'ball', 'boombox'];
-                    this._chosenEquip = routeParams.get('equipment');
                 }
                 TestGameFormComponent.prototype.onSubmit = function (value) {
                     console.log('you submitted value: ', value);
@@ -40,7 +43,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                         directives: [common_1.FORM_DIRECTIVES],
                         templateUrl: 'app/testgame-form.component.html'
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams])
+                    __metadata('design:paramtypes', [router_1.Router])
                 ], TestGameFormComponent);
                 return TestGameFormComponent;
             }());
