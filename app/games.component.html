@@ -4,7 +4,7 @@
 <p>{{_chosenNoise}}</p>
 
 <ul class="games">
-  <li *ngFor="#game of games | noise_filter: _chosenNoise">
+  <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise">
     <span class="badge">{{ game.name }}</span> {{game.description}}
   </li>
 </ul>
