@@ -17,12 +17,7 @@ export class TestGameFormComponent {
   constructor(
     private _router: Router) {}
 
-    // private _router: Router,
-    // routeParams: RouteParams) {
-    //   this._chosenEquip = routeParams.get('equipment')};
-
-    equipment = ['none', 'ball (soft)', 'ball', 'boombox']
-
+    equipment = ['none', 'ball (soft)', 'ball', 'boombox', 'hula-hoops']
   onSubmit(value: string): void {
     console.log('you submitted value: ', value);
     this._router.navigate(['Games',  value ])

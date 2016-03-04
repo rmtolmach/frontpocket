@@ -28,10 +28,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                 // private _chosenEquip: string;
                 function TestGameFormComponent(_router) {
                     this._router = _router;
-                    // private _router: Router,
-                    // routeParams: RouteParams) {
-                    //   this._chosenEquip = routeParams.get('equipment')};
-                    this.equipment = ['none', 'ball (soft)', 'ball', 'boombox'];
+                    this.equipment = ['none', 'ball (soft)', 'ball', 'boombox', 'hula-hoops'];
                 }
                 TestGameFormComponent.prototype.onSubmit = function (value) {
                     console.log('you submitted value: ', value);

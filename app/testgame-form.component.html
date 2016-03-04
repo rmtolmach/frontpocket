@@ -6,11 +6,20 @@
           class="ui form">
 
       <div class="field">
-        <label for="skuInput">Equipment</label>
+        <label for="equipInput">Equipment</label>
         <select ngControl="equipment">
           <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
         </select>
       </div>
+
+      <div class="field">
+        <label for="noiseInput">Noise Level</label>
+        <select ngControl="noise">
+          <option> Outside Voice </option>
+          <option> Inside Voice </option>
+        </select>
+      </div>
+
 
       <button type="submit" class="ui button">Submit</button>
     </form>
