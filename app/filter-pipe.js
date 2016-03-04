@@ -22,7 +22,10 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 function FilterPipe() {
                 }
                 FilterPipe.prototype.transform = function (value) {
-                    return value.filter(function (game) { return game.name.startsWith('P'); });
+                    console.log(value);
+                    if (value) {
+                        return value.filter(function (game) { return game.name.startsWith('P'); });
+                    }
                 };
                 FilterPipe = __decorate([
                     core_1.Pipe({

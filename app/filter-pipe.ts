@@ -6,6 +6,9 @@ import {Pipe} from "angular2/core";
 
 export class FilterPipe{
   transform(value){
-    return value.filter((game)=> game.name.startsWith('P'));
+    console.log(value);
+    if (value) {
+      return value.filter((game)=> game.name.startsWith('P'));
+    }
   }
 }
