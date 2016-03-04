@@ -8,10 +8,12 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 
 import {EquipmentPipe} from './equipment-pipe';
 import {NoisePipe} from './noise-pipe';
+import {TimePipe} from './time-pipe';
+
 
 @Component({
     // selector: 'my-games',
-    pipes: [EquipmentPipe, NoisePipe],
+    pipes: [EquipmentPipe, NoisePipe, TimePipe],
     templateUrl: 'app/games.component.html',
     styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists
@@ -22,14 +24,14 @@ export class GamesComponent implements OnInit {
   games: Game[];
   private _chosenEquip: string;
   private _chosenNoise: string;
-
+  private _chosenTime: string;
   // selectedGame: Game;
   errorMessage: string;
 // // It can infer what type it is from the GAMES array below, so we don't need to tell it.
   constructor(
     private _router:Router,
     private routeParams: RouteParams,
-    private _gameService: GameService) { this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise')}
+    private _gameService: GameService) { this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time')}
 
   ngOnInit() {
     this.getGames();
@@ -41,7 +43,7 @@ export class GamesComponent implements OnInit {
         .subscribe(
           games => this.games = games,
           error =>  this.errorMessage = <any>error);
-console.log(this._chosenEquip, this._chosenNoise);
+console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
 }
 
   // onSelect(game: Game) { this.selectedGame = game; }

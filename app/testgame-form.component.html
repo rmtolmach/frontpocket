@@ -1,5 +1,5 @@
 <div class="ui raised segment">
-    <h2 class="ui header">Test Form</h2>
+    <h2 class="ui header">Find a Game</h2>
 <!-- ngForm is automatically attached to any form tags I have     -->
     <form #f="ngForm"
           (ngSubmit)="onSubmit(f.value)"
@@ -17,6 +17,13 @@
         <select ngControl="noise">
           <option> Outside Voice </option>
           <option> Inside Voice </option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="timeInput">Time</label>
+        <select ngControl="time">
+          <option *ngFor="#t of time" [value]="t"> {{t}} </option>
         </select>
       </div>
 

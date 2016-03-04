@@ -28,6 +28,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                 function TestGameFormComponent(_router) {
                     this._router = _router;
                     this.equipment = ['none', 'ball (soft)', 'ball', 'boombox', 'hula-hoops'];
+                    this.time = [5, 10, 15, 20, 25, 30];
                 }
                 TestGameFormComponent.prototype.onSubmit = function (value) {
                     console.log('you submitted value: ', value);

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './game.service', './equipment-pipe', './noise-pipe'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './game.service', './equipment-pipe', './noise-pipe', './time-pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, game_service_1, equipment_pipe_1, noise_pipe_1;
+    var core_1, router_1, game_service_1, equipment_pipe_1, noise_pipe_1, time_pipe_1;
     var GamesComponent;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
             },
             function (noise_pipe_1_1) {
                 noise_pipe_1 = noise_pipe_1_1;
+            },
+            function (time_pipe_1_1) {
+                time_pipe_1 = time_pipe_1_1;
             }],
         execute: function() {
             GamesComponent = (function () {
@@ -36,7 +39,7 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
                     this._router = _router;
                     this.routeParams = routeParams;
                     this._gameService = _gameService;
-                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise');
+                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time');
                 }
                 GamesComponent.prototype.ngOnInit = function () {
                     this.getGames();
@@ -47,12 +50,12 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
                     //retrieving data from the promise.
                     this._gameService.getGames()
                         .subscribe(function (games) { return _this.games = games; }, function (error) { return _this.errorMessage = error; });
-                    console.log(this._chosenEquip, this._chosenNoise);
+                    console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
                 };
                 GamesComponent = __decorate([
                     core_1.Component({
                         // selector: 'my-games',
-                        pipes: [equipment_pipe_1.EquipmentPipe, noise_pipe_1.NoisePipe],
+                        pipes: [equipment_pipe_1.EquipmentPipe, noise_pipe_1.NoisePipe, time_pipe_1.TimePipe],
                         templateUrl: 'app/games.component.html',
                         styleUrls: ['app/games.component.css'],
                     }), 

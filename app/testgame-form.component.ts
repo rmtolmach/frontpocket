@@ -17,6 +17,7 @@ export class TestGameFormComponent {
     private _router: Router) {}
 
     equipment = ['none', 'ball (soft)', 'ball', 'boombox', 'hula-hoops']
+    time = [5,10,15,20,25,30]
   onSubmit(value: string): void {
     console.log('you submitted value: ', value);
     this._router.navigate(['Games',  value ])
