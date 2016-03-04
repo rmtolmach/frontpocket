@@ -33,7 +33,7 @@ System.register(['angular2/core', 'angular2/router', './game.service', './filter
                     this._router = _router;
                     this.routeParams = routeParams;
                     this._gameService = _gameService;
-                    this._chosenEquip = routeParams.get('equipment');
+                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise');
                 }
                 GamesComponent.prototype.ngOnInit = function () {
                     this.getGames();
@@ -44,12 +44,12 @@ System.register(['angular2/core', 'angular2/router', './game.service', './filter
                     //retrieving data from the promise.
                     this._gameService.getGames()
                         .subscribe(function (games) { return _this.games = games; }, function (error) { return _this.errorMessage = error; });
-                    console.log(this._chosenEquip);
+                    console.log(this._chosenEquip, this._chosenNoise);
                 };
                 GamesComponent = __decorate([
                     core_1.Component({
                         // selector: 'my-games',
-                        pipes: [filter_pipe_1.FilterPipe],
+                        pipes: [filter_pipe_1.EquipmentPipe],
                         templateUrl: 'app/games.component.html',
                         styleUrls: ['app/games.component.css'],
                     }), 

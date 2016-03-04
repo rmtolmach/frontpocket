@@ -6,10 +6,10 @@ import {TestGameFormComponent} from './testgame-form.component';
 import {GameService} from './game.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import {FilterPipe} from './filter-pipe';
+import {EquipmentPipe} from './filter-pipe';
 @Component({
     // selector: 'my-games',
-    pipes: [FilterPipe],
+    pipes: [EquipmentPipe],
     templateUrl: 'app/games.component.html',
     styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists
@@ -19,6 +19,7 @@ import {FilterPipe} from './filter-pipe';
 export class GamesComponent implements OnInit {
   games: Game[];
   private _chosenEquip: string;
+  private _chosenNoise: string;
 
   // selectedGame: Game;
   errorMessage: string;
@@ -26,7 +27,7 @@ export class GamesComponent implements OnInit {
   constructor(
     private _router:Router,
     private routeParams: RouteParams,
-    private _gameService: GameService) { this._chosenEquip = routeParams.get('equipment')}
+    private _gameService: GameService) { this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise')}
 
   ngOnInit() {
     this.getGames();
@@ -38,7 +39,7 @@ export class GamesComponent implements OnInit {
         .subscribe(
           games => this.games = games,
           error =>  this.errorMessage = <any>error);
-console.log(this._chosenEquip);
+console.log(this._chosenEquip, this._chosenNoise);
 }
 
   // onSelect(game: Game) { this.selectedGame = game; }

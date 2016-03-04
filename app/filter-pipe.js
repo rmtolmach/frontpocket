@@ -11,18 +11,18 @@ System.register(["angular2/core"], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var FilterPipe;
+    var EquipmentPipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            FilterPipe = (function () {
-                function FilterPipe() {
+            EquipmentPipe = (function () {
+                function EquipmentPipe() {
                 }
-                FilterPipe.prototype.transform = function (value, args) {
-                    console.log(args);
+                EquipmentPipe.prototype.transform = function (value, args) {
+                    console.log("these are the args:" + args);
                     if (value) {
                         if (args[0] === "none") {
                             return value.filter(function (game) { return game.equipment === null; });
@@ -30,15 +30,15 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                         return value.filter(function (game) { return game.equipment === args[0]; });
                     }
                 };
-                FilterPipe = __decorate([
+                EquipmentPipe = __decorate([
                     core_1.Pipe({
-                        name: "my_filter"
+                        name: "equip_filter"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], FilterPipe);
-                return FilterPipe;
+                ], EquipmentPipe);
+                return EquipmentPipe;
             }());
-            exports_1("FilterPipe", FilterPipe);
+            exports_1("EquipmentPipe", EquipmentPipe);
         }
     }
 });
