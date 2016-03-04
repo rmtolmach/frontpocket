@@ -24,6 +24,9 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 FilterPipe.prototype.transform = function (value, args) {
                     console.log(args);
                     if (value) {
+                        if (args[0] === "none") {
+                            return value.filter(function (game) { return game.equipment === null; });
+                        }
                         return value.filter(function (game) { return game.equipment === args[0]; });
                     }
                 };
