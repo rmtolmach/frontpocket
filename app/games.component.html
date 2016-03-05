@@ -7,5 +7,6 @@
 <ul class="games">
   <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise | time_filter: _chosenTime">
     <span class="badge">{{ game.name }}</span> {{game.description}}
+    {{game.time_range}}
   </li>
 </ul>
