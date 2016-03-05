@@ -24,7 +24,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 NoisePipe.prototype.transform = function (value, args) {
                     console.log("these are the args:" + args);
                     if (value) {
-                        if (args[0] === "Outside Voice") {
+                        if (args[0] === "Outside Voice" || args[0] === "Outside%20Voice") {
                             return value.filter(function (game) { return game.noise === true; });
                         }
                         return value.filter(function (game) { return game.noise === false; });
