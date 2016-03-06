@@ -34,7 +34,7 @@ export class GamesComponent implements OnInit {
   constructor(
     private _router:Router,
     private routeParams: RouteParams,
-    private _gameService: GameService) { this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time')}
+    private _gameService: GameService) { this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time'), this._chosenPlayers = routeParams.get('players')}
 
   ngOnInit() {
     this.getGames();

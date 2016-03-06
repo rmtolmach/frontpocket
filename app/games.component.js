@@ -42,7 +42,7 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
                     this._router = _router;
                     this.routeParams = routeParams;
                     this._gameService = _gameService;
-                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time');
+                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time'), this._chosenPlayers = routeParams.get('players');
                 }
                 GamesComponent.prototype.ngOnInit = function () {
                     this.getGames();
