@@ -27,6 +27,13 @@
         </select>
       </div>
 
+      <div class="field">
+        <label for="playersInput">Number of Players</label>
+        <select ngControl="players">
+          <option *ngFor="#p of players" [value]="p"> {{p}} </option>
+        </select>
+      </div>
+
 
       <button type="submit" class="ui button">Submit</button>
     </form>

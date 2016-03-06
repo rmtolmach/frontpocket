@@ -3,10 +3,12 @@
 <p>{{_chosenEquip}}</p>
 <p>{{_chosenNoise}}</p>
 <p>{{_chosenTime}}</p>
+<p>{{_chosenPlayers}}</p>
 
 <ul class="games">
-  <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise | time_filter: _chosenTime">
+  <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise | time_filter: _chosenTime | player_filter: _chosenPlayers">
     <span class="badge">{{ game.name }}</span> {{game.description}}
     {{game.time_range}}
+    {{game.num_of_players}}
   </li>
 </ul>

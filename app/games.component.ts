@@ -9,11 +9,13 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 import {EquipmentPipe} from './equipment-pipe';
 import {NoisePipe} from './noise-pipe';
 import {TimePipe} from './time-pipe';
+import {PlayersPipe} from './players-pipe';
+
 
 
 @Component({
     // selector: 'my-games',
-    pipes: [EquipmentPipe, NoisePipe, TimePipe],
+    pipes: [EquipmentPipe, NoisePipe, TimePipe, PlayersPipe],
     templateUrl: 'app/games.component.html',
     styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists
@@ -25,6 +27,7 @@ export class GamesComponent implements OnInit {
   private _chosenEquip: string;
   private _chosenNoise: string;
   private _chosenTime: string;
+  private _chosenPlayers: string;
   // selectedGame: Game;
   errorMessage: string;
 // // It can infer what type it is from the GAMES array below, so we don't need to tell it.
