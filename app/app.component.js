@@ -41,7 +41,6 @@ System.register(['angular2/core', 'angular2/http', './game.service', './games.co
                     core_1.Component({
                         selector: 'my-app',
                         template: "\n    <h1>{{title}}</h1>\n    <router-outlet></router-outlet>\n    <testgame-form></testgame-form>\n  ",
-                        styleUrls: ['app/app.component.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
                             router_1.ROUTER_PROVIDERS,

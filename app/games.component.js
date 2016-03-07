@@ -60,7 +60,6 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
                         // selector: 'my-games',
                         pipes: [equipment_pipe_1.EquipmentPipe, noise_pipe_1.NoisePipe, time_pipe_1.TimePipe, players_pipe_1.PlayersPipe],
                         templateUrl: 'app/games.component.html',
-                        styleUrls: ['app/games.component.css'],
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, game_service_1.GameService])
                 ], GamesComponent);

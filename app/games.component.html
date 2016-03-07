@@ -1,14 +1,23 @@
 <h1>{{title}}</h1>
-<h2>My Games</h2>
-<p>{{_chosenEquip}}</p>
+<!-- <p>{{_chosenEquip}}</p>
 <p>{{_chosenNoise}}</p>
 <p>{{_chosenTime}}</p>
-<p>{{_chosenPlayers}}</p>
+<p>{{_chosenPlayers}}</p> -->
 
-<ul class="games">
-  <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise | time_filter: _chosenTime | player_filter: _chosenPlayers">
-    <span class="badge">{{ game.name }}</span> {{game.description}}
-    {{game.time_range}}
-    {{game.num_of_players}}
-  </li>
-</ul>
+<a href="/">back</a>
+
+  <h2>Try one of these:</h2>
+  <ul class="games">
+    <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise | time_filter: _chosenTime | player_filter: _chosenPlayers">
+
+<!-- the problem here is that games will always be truthy. Check if there is anything in the li?       -->
+      <div *ngIf="games == null">
+        <h1>no games to show</h1>
+      </div>
+
+
+      <span class="badge">{{ game.name }}</span> {{game.description}}
+      {{game.time_range}}
+      {{game.num_of_players}}
+    </li>
+  </ul>

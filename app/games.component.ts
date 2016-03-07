@@ -1,23 +1,18 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
-// so when I use the word, Game, it knows what I'm talking about.
 import {Game} from './game';
 import {TestGameFormComponent} from './testgame-form.component';
 import {GameService} from './game.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-
 import {EquipmentPipe} from './equipment-pipe';
 import {NoisePipe} from './noise-pipe';
 import {TimePipe} from './time-pipe';
 import {PlayersPipe} from './players-pipe';
 
-
-
 @Component({
     // selector: 'my-games',
     pipes: [EquipmentPipe, NoisePipe, TimePipe, PlayersPipe],
     templateUrl: 'app/games.component.html',
-    styleUrls: ['app/games.component.css'],
 // this tells Angular that it exists
     // directives: [GameFormComponent]
 })
