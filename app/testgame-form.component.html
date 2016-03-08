@@ -6,30 +6,32 @@
           class="ui form">
 
       <div class="field">
-        <label for="equipInput">Equipment</label>
-        <select ngControl="equipment">
+        <label for="equipInput"><span>Equipment</span></label>
+        <select ngControl="equipment" name="equipment" #e="ngForm" ngModel="none">
           <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
         </select>
       </div>
 
       <div class="field">
-        <label for="noiseInput">Noise Level</label>
-        <select ngControl="noise" name="noise">
-          <option> Outside Voice </option>
+        <label for="noiseInput"><span>Noise Level</span></label>
+        <select ngControl="noise" name="noise" #noise="ngForm" ngModel="Outside Voice">
+          <option value="Outside Voice"> Outside Voice </option>
           <option> Inside Voice </option>
         </select>
       </div>
 
       <div class="field">
-        <label for="timeInput">Time</label>
-        <select ngControl="time">
+        <label for="timeInput"><span>Time</span></label>
+        <select ngControl="time" name="time" #t="ngForm" ngModel="doesntmatter">
+          <option value="doesntmatter">Doesn't Matter</option>
           <option *ngFor="#t of time" [value]="t"> {{t}} </option>
         </select>
       </div>
 
       <div class="field">
-        <label for="playersInput">Number of Players</label>
-        <select ngControl="players">
+        <label for="playersInput"><span>Number of Players</span></label>
+        <select ngControl="players" name="players" #p="ngForm" ngModel="whatever">
+          <option value="whatever">Whatever</option>
           <option *ngFor="#p of players" [value]="p"> {{p}} </option>
         </select>
       </div>
