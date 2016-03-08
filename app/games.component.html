@@ -7,14 +7,12 @@
 <a href="/">back</a>
 
   <h2>Try one of these:</h2>
+  <div *ngIf="matchingGames && matchingGames.length === 0">
+    <h1>no games to show</h1>
+  </div>
+
   <ul class="games">
-    <li *ngFor="#game of games | equip_filter: _chosenEquip | noise_filter: _chosenNoise | time_filter: _chosenTime | player_filter: _chosenPlayers">
-
-<!-- the problem here is that games will always be truthy. Check if there is anything in the li?       -->
-      <div *ngIf="games == null">
-        <h1>no games to show</h1>
-      </div>
-
+    <li *ngFor="#game of matchingGames">
 
       <span class="badge">{{ game.name }}</span>
       <span class="description">{{game.description}}</span>
@@ -22,3 +20,5 @@
       {{game.num_of_players}}
     </li>
   </ul>
+
+  <!-- <div *ng-for="#game of games" *ng-if="conditon(item)">{item | filter1 | filter2}</div> -->

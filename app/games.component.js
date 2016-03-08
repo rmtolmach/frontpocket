@@ -52,7 +52,15 @@ System.register(['angular2/core', 'angular2/router', './game.service', './equipm
                     var _this = this;
                     //retrieving data from the promise.
                     this._gameService.getGames()
-                        .subscribe(function (games) { return _this.games = games; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (games) {
+                        _this.games = games;
+                        if (_this._chosenEquip === "none") {
+                            _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
+                        }
+                        else {
+                            _this.matchingGames = games.filter(function (game) { return game.equipment === _this._chosenEquip; });
+                        }
+                    }, function (error) { return _this.errorMessage = error; });
                     console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
                 };
                 GamesComponent = __decorate([

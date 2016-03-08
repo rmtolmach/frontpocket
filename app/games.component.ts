@@ -19,6 +19,8 @@ import {PlayersPipe} from './players-pipe';
 // AppComponent is the same name as the file. the word component is the key. AppComponent is the top level component in the application. There should be only one instance of GameService in the whole app.
 export class GamesComponent implements OnInit {
   games: Game[];
+  matchingGames: Game[];
+  eqGames: Game[];
   private _chosenEquip: string;
   private _chosenNoise: string;
   private _chosenTime: string;
@@ -39,7 +41,17 @@ export class GamesComponent implements OnInit {
 //retrieving data from the promise.
     this._gameService.getGames()
         .subscribe(
-          games => this.games = games,
+
+          games => {
+            this.games = games
+            if (this._chosenEquip === "none"){
+              this.matchingGames = games.filter((game)=> game.equipment === null);
+            } else {
+              this.matchingGames = games.filter((game)=> game.equipment === this._chosenEquip);
+            }
+            
+          },
+
           error =>  this.errorMessage = <any>error);
 console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
 }
