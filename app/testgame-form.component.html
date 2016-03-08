@@ -6,21 +6,6 @@
           class="ui form">
 
       <div class="field">
-        <label for="equipInput"><span>Equipment</span></label>
-        <select ngControl="equipment" name="equipment" #e="ngForm" ngModel="none">
-          <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="noiseInput"><span>Noise Level</span></label>
-        <select ngControl="noise" name="noise" #noise="ngForm" ngModel="Outside Voice">
-          <option value="Outside Voice"> Outside Voice </option>
-          <option> Inside Voice </option>
-        </select>
-      </div>
-
-      <div class="field">
         <label for="timeInput"><span>Time</span></label>
         <select ngControl="time" name="time" #t="ngForm" ngModel="doesntmatter">
           <option value="doesntmatter">Doesn't Matter</option>
@@ -36,6 +21,20 @@
         </select>
       </div>
 
+      <div class="field">
+        <label for="equipInput"><span>Equipment</span></label>
+        <select ngControl="equipment" name="equipment" #e="ngForm" ngModel="none">
+          <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="noiseInput"><span>Noise Level</span></label>
+        <select ngControl="noise" name="noise" #noise="ngForm" ngModel="Outside Voice">
+          <option value="Outside Voice"> Outside Voice </option>
+          <option> Inside Voice </option>
+        </select>
+      </div>
 
       <button type="submit" class="ui button">Submit</button>
     </form>

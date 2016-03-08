@@ -32,6 +32,43 @@ select {
   margin-top: 5px;
   margin-bottom: 20px;
 }
+
+/*GAMES SHOW PAGE*/
+.games li {
+  list-style-type: none;
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+/*for medium displays*/
+@media screen and (min-width: 28.75em) {
+  .games li {
+    width: 70%;
+  }
+}
+
+/*for larger displays*/
+@media screen and (min-width: 40.5em) {
+  .games li {
+    width: 60%;
+  }
+}
+
+.games .badge {
+  color: red;
+  display: block;
+  font-size: 1.3em;
+  border: blue solid 3px;
+  padding: .3em;
+  margin-bottom: .2em;
+}
+
+.games .description {
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
 /*label {
   display: inline-block;
   width: 3em;
