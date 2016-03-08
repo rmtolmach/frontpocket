@@ -14,6 +14,7 @@ export class TimePipe{
 //(after being turned into an integer) is included in the array.
     if (value) {
       if (args[0] === "doesntmatter"){
+        return value;
         //Don't apply the filter. Is this possible?
       }
       return value.filter((game)=>

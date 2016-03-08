@@ -29,6 +29,7 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     //(after being turned into an integer) is included in the array.
                     if (value) {
                         if (args[0] === "doesntmatter") {
+                            return value;
                         }
                         return value.filter(function (game) {
                             return Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(args[0]));

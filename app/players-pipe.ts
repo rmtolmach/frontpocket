@@ -11,7 +11,7 @@ export class PlayersPipe{
 //the form (after being turned into an integer) is included in the array.
     if (value) {
         if (args[0] === "whatever"){
-          //Don't apply the filter. Is this possible?
+          return value;
         }
       return value.filter((game)=>
         Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(args[0])));
