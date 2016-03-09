@@ -34,6 +34,8 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                     this._router = _router;
                     this.routeParams = routeParams;
                     this._gameService = _gameService;
+                    this.games = [];
+                    this.matchingGames = [];
                     this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time'), this._chosenPlayers = routeParams.get('players');
                 }
                 GamesComponent.prototype.ngOnInit = function () {
@@ -47,30 +49,30 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                         .subscribe(function (games) {
                         _this.games = games;
                         if (_this._chosenEquip === "none") {
-                            _this.matchingGames = _this.games.filter(function (game) { return game.equipment === null; });
+                            _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
                         }
                         else {
-                            _this.matchingGames = _this.games.filter(function (game) { return game.equipment === _this._chosenEquip; });
+                            _this.matchingGames = _this.matchingGames, games.filter(function (game) { return game.equipment === _this._chosenEquip; });
                         }
                         if (_this._chosenNoise === "Outside Voice" || _this._chosenNoise === "Outside%20Voice") {
-                            _this.matchingGames = _this.games.filter(function (game) { return game.noise === true; });
+                            _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === true; });
                         }
                         else {
-                            _this.matchingGames = _this.games.filter(function (game) { return game.noise === false; });
+                            _this.matchingGames = _this.matchingGames, games.filter(function (game) { return game.noise === false; });
                         }
                         if (_this._chosenPlayers === "whatever") {
-                            _this.matchingGames = games;
+                            _this.matchingGames = _this.matchingGames;
                         }
                         else {
-                            _this.matchingGames = games.filter(function (game) {
-                                return Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)))).map(function (_, i) { return i + parseInt(game.num_of_players); }).includes(parseInt(_this._chosenPlayers));
+                            _this.matchingGames = _this.matchingGames.filter(function (game) {
+                                return Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)) - (parseInt(game.num_of_players) - 1))).map(function (_, i) { return i + parseInt(game.num_of_players); }).includes(parseInt(_this._chosenPlayers));
                             });
                         }
                         if (_this._chosenTime === "doesntmatter") {
-                            _this.matchingGames = games;
+                            _this.matchingGames = _this.matchingGames;
                         }
                         else {
-                            _this.matchingGames = games.filter(function (game) {
+                            _this.matchingGames = _this.matchingGames.filter(function (game) {
                                 return Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenPlayers));
                             });
                         }
@@ -92,4 +94,6 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
         }
     }
 });
+// I could maybe use this push and apply
+// this.matchingGames.push.apply(this.matchingGames, games.filter((game)=> game.equipment === this._chosenEquip));
 //# sourceMappingURL=games.component.js.map

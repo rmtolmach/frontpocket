@@ -18,8 +18,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 })
 // AppComponent is the same name as the file. the word component is the key. AppComponent is the top level component in the application. There should be only one instance of GameService in the whole app.
 export class GamesComponent implements OnInit {
-  games: Game[];
-  matchingGames: Game[];
+  games: Game[] = [];
+  matchingGames: Game[] = [];
   private _chosenEquip: string;
   private _chosenNoise: string;
   private _chosenTime: string;
@@ -44,25 +44,26 @@ export class GamesComponent implements OnInit {
           games => {
             this.games = games
             if (this._chosenEquip === "none"){
-              this.matchingGames = this.games.filter((game)=> game.equipment === null);
+              this.matchingGames = games.filter((game)=> game.equipment === null);
+              // debugger
             } else {
-              this.matchingGames = this.games.filter((game)=> game.equipment === this._chosenEquip);
+              this.matchingGames = this.matchingGames, games.filter((game)=> game.equipment === this._chosenEquip);
             }
             if (this._chosenNoise === "Outside Voice" || this._chosenNoise === "Outside%20Voice" ) {
-              this.matchingGames = this.games.filter((game)=> game.noise === true);
+              this.matchingGames = this.matchingGames.filter((game)=> game.noise === true);
             } else {
-              this.matchingGames = this.games.filter((game)=> game.noise === false);
+              this.matchingGames = this.matchingGames, games.filter((game)=> game.noise === false);
             }
             if (this._chosenPlayers === "whatever") {
-              this.matchingGames = games;
+              this.matchingGames = this.matchingGames;
             } else {
-              this.matchingGames = games.filter((game)=>
-                Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)))).map(function (_, i) {return i + parseInt(game.num_of_players);}).includes(parseInt(this._chosenPlayers)));
+              this.matchingGames = this.matchingGames.filter((game)=>
+                Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)) - (parseInt(game.num_of_players) - 1) )).map(function (_, i) {return i + parseInt(game.num_of_players);}).includes(parseInt(this._chosenPlayers)));
             }
             if (this._chosenTime === "doesntmatter") {
-              this.matchingGames = games;
+              this.matchingGames = this.matchingGames;
             } else {
-              this.matchingGames = games.filter((game)=>
+              this.matchingGames = this.matchingGames.filter((game)=>
                 Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(this._chosenPlayers)));
             }
             return this.matchingGames;
@@ -78,3 +79,5 @@ console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
   //   this._router.navigate(['GameForm', { id: this.selectedGame.name }]);
   // }
 }
+// I could maybe use this push and apply
+// this.matchingGames.push.apply(this.matchingGames, games.filter((game)=> game.equipment === this._chosenEquip));
