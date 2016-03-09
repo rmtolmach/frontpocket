@@ -6,20 +6,41 @@
 
 <a href="/">back</a>
 
-  <h2>Try one of these:</h2>
   <div *ngIf="matchingGames && matchingGames.length === 0">
-    <h1>no games to show</h1>
+    <h1>No games fit your search.</h1>
+    <h2>How about a dance party?</h2>
+    <p class="youtube">Here are some overplayed jams that children love:</p>
+    <div class="songlink">
+      <a href="https://youtu.be/y6Sxv-sUYtM">Happy - Pharrell Williams</a>
+    </div>
+    <div class="songlink">
+      <a href="https://youtu.be/OPf0YbXqDm0">Uptown Funk - Bruno Mars</a>
+    </div>
+    <div class="songlink">
+      <a href="https://youtu.be/pIOOwhmkoLo">Party Rock Anthem - LMFAO</a>
+    </div>
+    <div class="songlink">
+      <a href="https://youtu.be/M11SvDtPBhA">Party In The U.S.A. - Miley Cyrus</a>
+    </div>
+
+
+
   </div>
 
-  <ul class="games">
-    <li *ngFor="#game of matchingGames">
+  <div *ngIf="matchingGames && matchingGames.length > 0">
+    <h2>Try one of these:</h2>
 
-      <span class="badge">{{ game.name }}</span>
-      <span class="description">{{game.description}}</span>
-      TIME: {{game.time_range}}
-      Players: {{game.num_of_players}}
-      {{game.noise}}
-    </li>
-  </ul>
+    <ul class="games">
+      <li *ngFor="#game of matchingGames">
+
+        <span class="badge">{{ game.name }}</span>
+        <span class="description">{{game.description}}</span>
+        TIME: {{game.time_range}}
+        Players: {{game.num_of_players}}
+        {{game.noise}}
+      </li>
+    </ul>
+</div>
+
 
   <!-- <div *ng-for="#game of games" *ng-if="conditon(item)">{item | filter1 | filter2}</div> -->
