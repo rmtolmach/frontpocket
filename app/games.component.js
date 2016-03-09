@@ -48,17 +48,18 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                     this._gameService.getGames()
                         .subscribe(function (games) {
                         _this.games = games;
+                        // console.log(this.matchingGames)
                         if (_this._chosenEquip === "none") {
                             _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
                         }
                         else {
-                            _this.matchingGames = _this.matchingGames, games.filter(function (game) { return game.equipment === _this._chosenEquip; });
+                            _this.matchingGames = games.filter(function (game) { return game.equipment === _this._chosenEquip; });
                         }
                         if (_this._chosenNoise === "Outside Voice" || _this._chosenNoise === "Outside%20Voice") {
                             _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === true; });
                         }
                         else {
-                            _this.matchingGames = _this.matchingGames, games.filter(function (game) { return game.noise === false; });
+                            _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === false; });
                         }
                         if (_this._chosenPlayers === "whatever") {
                             _this.matchingGames = _this.matchingGames;
@@ -73,7 +74,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                         }
                         else {
                             _this.matchingGames = _this.matchingGames.filter(function (game) {
-                                return Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenPlayers));
+                                return Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenTime));
                             });
                         }
                         return _this.matchingGames;

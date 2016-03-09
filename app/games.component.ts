@@ -43,16 +43,17 @@ export class GamesComponent implements OnInit {
 
           games => {
             this.games = games
+// console.log(this.matchingGames)
             if (this._chosenEquip === "none"){
               this.matchingGames = games.filter((game)=> game.equipment === null);
               // debugger
             } else {
-              this.matchingGames = this.matchingGames, games.filter((game)=> game.equipment === this._chosenEquip);
+              this.matchingGames = games.filter((game)=> game.equipment === this._chosenEquip);
             }
             if (this._chosenNoise === "Outside Voice" || this._chosenNoise === "Outside%20Voice" ) {
               this.matchingGames = this.matchingGames.filter((game)=> game.noise === true);
             } else {
-              this.matchingGames = this.matchingGames, games.filter((game)=> game.noise === false);
+              this.matchingGames = this.matchingGames.filter((game)=> game.noise === false);
             }
             if (this._chosenPlayers === "whatever") {
               this.matchingGames = this.matchingGames;
@@ -64,7 +65,7 @@ export class GamesComponent implements OnInit {
               this.matchingGames = this.matchingGames;
             } else {
               this.matchingGames = this.matchingGames.filter((game)=>
-                Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(this._chosenPlayers)));
+                Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1) )).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(this._chosenTime)));
             }
             return this.matchingGames;
           },
