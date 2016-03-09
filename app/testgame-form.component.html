@@ -30,9 +30,9 @@
 
       <div class="field">
         <label for="noiseInput"><span>Noise Level</span></label>
-        <select ngControl="noise" name="noise" #noise="ngForm" ngModel="Outside Voice">
-          <option value="Outside Voice"> Outside Voice </option>
-          <option> Inside Voice </option>
+        <select ngControl="noise" name="noise" #n="ngForm" ngModel="whatever">
+          <option value="whatever">Whatever</option>
+          <option *ngFor="#n of noise" [value]="n"> {{n}} </option>
         </select>
       </div>
 
