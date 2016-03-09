@@ -12,14 +12,13 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             // The TypeScript compiler generates a public field for each public constructor parameter and assigns the parameter’s value to that field automatically when we create new games. Although I'm not creating new games yet.
             Game = (function () {
-                function Game(id, name, equipment, description, time_range, 
-                    // public num_of_players: string,
-                    noise) {
+                function Game(id, name, equipment, description, time_range, num_of_players, noise) {
                     this.id = id;
                     this.name = name;
                     this.equipment = equipment;
                     this.description = description;
                     this.time_range = time_range;
+                    this.num_of_players = num_of_players;
                     this.noise = noise;
                 }
                 return Game;

@@ -4,14 +4,14 @@ import {Game} from './game';
 import {TestGameFormComponent} from './testgame-form.component';
 import {GameService} from './game.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
-import {EquipmentPipe} from './equipment-pipe';
-import {NoisePipe} from './noise-pipe';
-import {TimePipe} from './time-pipe';
-import {PlayersPipe} from './players-pipe';
+// import {EquipmentPipe} from './equipment-pipe';
+// import {NoisePipe} from './noise-pipe';
+// import {TimePipe} from './time-pipe';
+// import {PlayersPipe} from './players-pipe';
 
 @Component({
     // selector: 'my-games',
-    pipes: [EquipmentPipe, NoisePipe, TimePipe, PlayersPipe],
+    // pipes: [EquipmentPipe, NoisePipe, TimePipe, PlayersPipe],
     templateUrl: 'app/games.component.html',
 // this tells Angular that it exists
     // directives: [GameFormComponent]
@@ -20,7 +20,6 @@ import {PlayersPipe} from './players-pipe';
 export class GamesComponent implements OnInit {
   games: Game[];
   matchingGames: Game[];
-  eqGames: Game[];
   private _chosenEquip: string;
   private _chosenNoise: string;
   private _chosenTime: string;
@@ -45,11 +44,28 @@ export class GamesComponent implements OnInit {
           games => {
             this.games = games
             if (this._chosenEquip === "none"){
-              this.matchingGames = games.filter((game)=> game.equipment === null);
+              this.matchingGames = this.games.filter((game)=> game.equipment === null);
             } else {
-              this.matchingGames = games.filter((game)=> game.equipment === this._chosenEquip);
+              this.matchingGames = this.games.filter((game)=> game.equipment === this._chosenEquip);
             }
-            
+            if (this._chosenNoise === "Outside Voice" || this._chosenNoise === "Outside%20Voice" ) {
+              this.matchingGames = this.games.filter((game)=> game.noise === true);
+            } else {
+              this.matchingGames = this.games.filter((game)=> game.noise === false);
+            }
+            if (this._chosenPlayers === "whatever") {
+              this.matchingGames = games;
+            } else {
+              this.matchingGames = games.filter((game)=>
+                Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)))).map(function (_, i) {return i + parseInt(game.num_of_players);}).includes(parseInt(this._chosenPlayers)));
+            }
+            if (this._chosenTime === "doesntmatter") {
+              this.matchingGames = games;
+            } else {
+              this.matchingGames = games.filter((game)=>
+                Array.apply(null, Array(parseInt(game.time_range.slice(-2)))).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(this._chosenPlayers)));
+            }
+            return this.matchingGames;
           },
 
           error =>  this.errorMessage = <any>error);

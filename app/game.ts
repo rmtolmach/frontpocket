@@ -12,7 +12,7 @@ export class Game {
     public equipment: string,
     public description: string,
     public time_range: string,
-    // public num_of_players: string,
+    public num_of_players: string,
     public noise: boolean
   ) {  }
 }
