@@ -34,11 +34,11 @@ function createPathRecords(pathsMapping, appPath) {
 }
 
 function onlyAppFiles(filePath) {
-    return /\/base\/dist\/(?!.*\.spec\.js$).*\.js$/.test(filePath);
+    return /\/dist\//.test(filePath);
 }
 
 function onlySpecFiles(path) {
-    return /-spec\.js$/.test(path);
+    return /\-spec\.js$/.test(path);
 }
 
 function resolveTestFiles() {
