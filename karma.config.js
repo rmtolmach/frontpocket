@@ -18,14 +18,14 @@ module.exports = function(config) {
             {pattern: 'dist/**/*.js', included: false, watched: true},
 
             // paths to support debugging with source maps in dev tools
-            {pattern: 'src/**/*.ts', included: false, watched: false},
+            {pattern: 'app/**/*.ts', included: false, watched: false},
             {pattern: 'dist/**/*.js.map', included: false, watched: false}
         ],
 
         // proxied base paths
         proxies: {
             // required for component assests fetched by Angular's compiler
-            '/src/': '/base/src/'
+            '/app/': '/base/src/app/'
         },
 
         port: 9876,
@@ -61,5 +61,5 @@ module.exports = function(config) {
         },
 
         singleRun: true
-    })
+    });
 };
