@@ -4,11 +4,35 @@ body { margin: 2em; }*/
 /*button { padding: 0.2em; font-size: 14px}
 * { font-family: Arial; }*/
 
-
+/*Form Page*/
 body {
   margin: auto 0;
   text-align: center;
+
 }
+/*large display*/
+@media screen and (min-width: 45.5em) {
+  body {
+    margin: auto 0;
+    text-align: center;
+    background-image: url("app/running.jpeg");
+    background-size: cover;
+  }
+}
+/*large display*/
+@media screen and (min-width: 45.5em) {
+  .form-page {
+    background-color: white;
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 2em;
+  }
+}
+
+.form-page {
+}
+
 
 button {
   margin-top: 20px;
