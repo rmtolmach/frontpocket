@@ -6,7 +6,11 @@
 
 <a href="/">back</a>
 
-  <div *ngIf="matchingGames && matchingGames.length === 0">
+<div *ngIf="pendingRequest">
+  <h1>Wait for it...</h1>
+</div>
+
+  <div *ngIf="!pendingRequest && matchingGames.length === 0">
     <h1>No games fit your search.</h1>
     <h2>How about a dance party?</h2>
     <p class="youtube">Here are some overplayed jams that children love:</p>
@@ -27,7 +31,7 @@
 
   </div>
 
-  <div *ngIf="matchingGames && matchingGames.length > 0">
+  <div *ngIf="!pendingRequest && matchingGames.length > 0">
     <h2>Try one of these:</h2>
 
     <ul class="games">

@@ -15,6 +15,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 export class GamesComponent implements OnInit {
   games: Game[] = [];
   matchingGames: Game[] = [];
+  pendingRequest: boolean = true;
   private _chosenEquip: string;
   private _chosenNoise: string;
   private _chosenTime: string;
@@ -32,6 +33,7 @@ export class GamesComponent implements OnInit {
 }
 //we call getGames NOT in the constructor but in ngOnlnit.
   getGames() {
+    this.pendingRequest = true;
 //retrieving data from the promise.
     this._gameService.getGames()
         .subscribe(
@@ -60,6 +62,7 @@ export class GamesComponent implements OnInit {
               this.matchingGames = this.matchingGames.filter((game)=>
                 Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1) )).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(this._chosenTime)));
             }
+            this.pendingRequest = false;
             return this.matchingGames;
           },
 

@@ -32,6 +32,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                     this._gameService = _gameService;
                     this.games = [];
                     this.matchingGames = [];
+                    this.pendingRequest = true;
                     this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time'), this._chosenPlayers = routeParams.get('players');
                 }
                 GamesComponent.prototype.ngOnInit = function () {
@@ -40,6 +41,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                 //we call getGames NOT in the constructor but in ngOnlnit.
                 GamesComponent.prototype.getGames = function () {
                     var _this = this;
+                    this.pendingRequest = true;
                     //retrieving data from the promise.
                     this._gameService.getGames()
                         .subscribe(function (games) {
@@ -72,6 +74,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                                 return Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenTime));
                             });
                         }
+                        _this.pendingRequest = false;
                         return _this.matchingGames;
                     }, function (error) { return _this.errorMessage = error; });
                     console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
