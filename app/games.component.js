@@ -24,10 +24,6 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                 game_service_1 = game_service_1_1;
             }],
         execute: function() {
-            // import {EquipmentPipe} from './equipment-pipe';
-            // import {NoisePipe} from './noise-pipe';
-            // import {TimePipe} from './time-pipe';
-            // import {PlayersPipe} from './players-pipe';
             GamesComponent = (function () {
                 // // It can infer what type it is from the GAMES array below, so we don't need to tell it.
                 function GamesComponent(_router, routeParams, _gameService) {
@@ -48,7 +44,6 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                     this._gameService.getGames()
                         .subscribe(function (games) {
                         _this.games = games;
-                        // console.log(this.matchingGames)
                         if (_this._chosenEquip === "none") {
                             _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
                         }
@@ -84,7 +79,6 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                 GamesComponent = __decorate([
                     core_1.Component({
                         // selector: 'my-games',
-                        // pipes: [EquipmentPipe, NoisePipe, TimePipe, PlayersPipe],
                         templateUrl: 'app/games.component.html',
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, game_service_1.GameService])
