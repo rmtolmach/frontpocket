@@ -47,6 +47,8 @@ export class GamesComponent implements OnInit {
             }
             if (this._chosenNoise === "Outside Voice" || this._chosenNoise === "Outside%20Voice" ) {
               this.matchingGames = this.matchingGames.filter((game)=> game.noise === true);
+            } else if (this._chosenNoise === "whatever") {
+              this.matchingGames = this.matchingGames;
             } else {
               this.matchingGames = this.matchingGames.filter((game)=> game.noise === false);
             }

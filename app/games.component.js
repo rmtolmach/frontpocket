@@ -55,6 +55,9 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                         if (_this._chosenNoise === "Outside Voice" || _this._chosenNoise === "Outside%20Voice") {
                             _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === true; });
                         }
+                        else if (_this._chosenNoise === "whatever") {
+                            _this.matchingGames = _this.matchingGames;
+                        }
                         else {
                             _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === false; });
                         }
