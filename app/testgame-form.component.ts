@@ -7,10 +7,8 @@ import {Router, RouteParams} from 'angular2/router';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 @Component({
-  selector: 'testgame-form',
   directives: [FORM_DIRECTIVES],
-  templateUrl: 'app/testgame-form.component.html',
-
+  templateUrl: 'app/testgame-form.component.html'
 })
 export class TestGameFormComponent {
 

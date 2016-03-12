@@ -38,9 +38,8 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                 };
                 TestGameFormComponent = __decorate([
                     core_1.Component({
-                        selector: 'testgame-form',
                         directives: [common_1.FORM_DIRECTIVES],
-                        templateUrl: 'app/testgame-form.component.html',
+                        templateUrl: 'app/testgame-form.component.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router])
                 ], TestGameFormComponent);
