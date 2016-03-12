@@ -71,6 +71,9 @@ select {
 }
 
 /*GAMES SHOW PAGE*/
+.show-body {
+  background-color: white;
+}
 .games li {
   list-style-type: none;
   text-align: left;
@@ -93,7 +96,7 @@ select {
   }
 }
 
-.games .badge {
+.games .game-name {
   color: red;
   display: block;
   font-size: 1.3em;
@@ -105,6 +108,22 @@ select {
 .games .description {
   font-size: 1.2em;
   line-height: 1.3em;
+}
+
+.back {
+  font-family: 'Muli', sans-serif;
+  background-color: #5988b9;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
+  cursor: pointer; cursor: hand;
+  font-size: 1em;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
 }
 /*label {
   display: inline-block;
@@ -177,7 +196,7 @@ button:hover {
   position: relative;
   top: -3px;
 }
-.games .badge {
+.games .game-name {
   display: inline-block;
   font-size: small;
   color: white;
@@ -192,31 +211,6 @@ button:hover {
   border-radius: 4px 0px 0px 4px;
 }*/
 
-/*h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
-}
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
-}
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
+/*nav a:visited, a:link {
   color: #607D8B;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
-}
-nav a.router-link-active {
-  color: #039be5;
 }*/

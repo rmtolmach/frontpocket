@@ -1,6 +1,7 @@
+<div class="show-body">
 <h1>{{title}}</h1>
 
-<a href="/">back</a>
+<a class="back" href="/">back</a>
 
 <div *ngIf="pendingRequest">
   <h1>Wait for it...</h1>
@@ -31,11 +32,12 @@
     <ul class="games">
       <li *ngFor="#game of matchingGames">
 
-        <span class="badge">{{ game.name }}</span>
+        <span class="game-name">{{ game.name }}</span>
         <span class="description">{{game.description}}</span>
         TIME: {{game.time_range}}
         Players: {{game.num_of_players}}
         {{game.noise}}
       </li>
     </ul>
+</div>
 </div>
