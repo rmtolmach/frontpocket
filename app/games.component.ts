@@ -20,6 +20,7 @@ export class GamesComponent implements OnInit {
   private _chosenNoise: string;
   private _chosenTime: string;
   private _chosenPlayers: string;
+
   // selectedGame: Game;
   errorMessage: string;
 // // It can infer what type it is from the GAMES array below, so we don't need to tell it.
@@ -40,6 +41,7 @@ export class GamesComponent implements OnInit {
 
           games => {
             this.games = games
+
             if (this._chosenEquip === "none"){
               this.matchingGames = games.filter((game)=> game.equipment === null);
             } else {
@@ -78,5 +80,3 @@ console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
   //   this._router.navigate(['GameForm', { id: this.selectedGame.name }]);
   // }
 }
-// I could maybe use this push and apply
-// this.matchingGames.push.apply(this.matchingGames, games.filter((game)=> game.equipment === this._chosenEquip));

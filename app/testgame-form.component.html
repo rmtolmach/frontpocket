@@ -5,7 +5,7 @@
 <!-- ngForm is automatically attached to any form tags I have     -->
     <form #f="ngForm"
           (ngSubmit)="onSubmit(f.value)"
-          class="ui form">
+          class="game-form">
 
       <div class="field">
         <label for="timeInput"><span>Time</span></label>
@@ -38,6 +38,8 @@
         </select>
       </div>
 
-      <button type="submit" class="ui button">Submit</button>
+      <button type="submit" name="action" value="go" class="go-button">Go!</button>
+      <button type="submit" name="action" value="lucky" class="lucky">I'm Feeling Desperate</button>
+
     </form>
   </div>

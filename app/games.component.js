@@ -95,6 +95,4 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
         }
     }
 });
-// I could maybe use this push and apply
-// this.matchingGames.push.apply(this.matchingGames, games.filter((game)=> game.equipment === this._chosenEquip));
 //# sourceMappingURL=games.component.js.map
