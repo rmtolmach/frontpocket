@@ -33,7 +33,8 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                     this.games = [];
                     this.matchingGames = [];
                     this.pendingRequest = true;
-                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time'), this._chosenPlayers = routeParams.get('players');
+                    this.desperate = false;
+                    this._chosenEquip = routeParams.get('equipment'), this._chosenNoise = routeParams.get('noise'), this._chosenTime = routeParams.get('time'), this._chosenPlayers = routeParams.get('players'), this._chosenType = routeParams.get('type');
                 }
                 GamesComponent.prototype.ngOnInit = function () {
                     this.getGames();
@@ -42,43 +43,53 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                 GamesComponent.prototype.getGames = function () {
                     var _this = this;
                     this.pendingRequest = true;
+                    this.desperate = false;
                     //retrieving data from the promise.
                     this._gameService.getGames()
                         .subscribe(function (games) {
                         _this.games = games;
-                        if (_this._chosenEquip === "none") {
-                            _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
+                        if (_this._chosenType === "random") {
+                            _this.randomNum = Math.floor(Math.random() * (20 - 1)) + 1;
+                            _this.randomGame = games[_this.randomNum];
+                            _this.pendingRequest = false;
+                            _this.desperate = true;
+                            return _this.randomGame;
                         }
                         else {
-                            _this.matchingGames = games.filter(function (game) { return game.equipment === _this._chosenEquip; });
+                            if (_this._chosenEquip === "none") {
+                                _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
+                            }
+                            else {
+                                _this.matchingGames = games.filter(function (game) { return game.equipment === _this._chosenEquip; });
+                            }
+                            if (_this._chosenNoise === "Outside Voice" || _this._chosenNoise === "Outside%20Voice") {
+                                _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === true; });
+                            }
+                            else if (_this._chosenNoise === "whatever") {
+                                _this.matchingGames = _this.matchingGames;
+                            }
+                            else {
+                                _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === false; });
+                            }
+                            if (_this._chosenPlayers === "whatever") {
+                                _this.matchingGames = _this.matchingGames;
+                            }
+                            else {
+                                _this.matchingGames = _this.matchingGames.filter(function (game) {
+                                    return Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)) - (parseInt(game.num_of_players) - 1))).map(function (_, i) { return i + parseInt(game.num_of_players); }).includes(parseInt(_this._chosenPlayers));
+                                });
+                            }
+                            if (_this._chosenTime === "doesntmatter") {
+                                _this.matchingGames = _this.matchingGames;
+                            }
+                            else {
+                                _this.matchingGames = _this.matchingGames.filter(function (game) {
+                                    return Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenTime));
+                                });
+                            }
+                            _this.pendingRequest = false;
+                            return _this.matchingGames;
                         }
-                        if (_this._chosenNoise === "Outside Voice" || _this._chosenNoise === "Outside%20Voice") {
-                            _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === true; });
-                        }
-                        else if (_this._chosenNoise === "whatever") {
-                            _this.matchingGames = _this.matchingGames;
-                        }
-                        else {
-                            _this.matchingGames = _this.matchingGames.filter(function (game) { return game.noise === false; });
-                        }
-                        if (_this._chosenPlayers === "whatever") {
-                            _this.matchingGames = _this.matchingGames;
-                        }
-                        else {
-                            _this.matchingGames = _this.matchingGames.filter(function (game) {
-                                return Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)) - (parseInt(game.num_of_players) - 1))).map(function (_, i) { return i + parseInt(game.num_of_players); }).includes(parseInt(_this._chosenPlayers));
-                            });
-                        }
-                        if (_this._chosenTime === "doesntmatter") {
-                            _this.matchingGames = _this.matchingGames;
-                        }
-                        else {
-                            _this.matchingGames = _this.matchingGames.filter(function (game) {
-                                return Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenTime));
-                            });
-                        }
-                        _this.pendingRequest = false;
-                        return _this.matchingGames;
                     }, function (error) { return _this.errorMessage = error; });
                     console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
                 };
