@@ -8,7 +8,6 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 @Component({
   selector: 'my-app',
   template: `
-    <h1>{{title}}</h1>
     <router-outlet></router-outlet>
     <testgame-form></testgame-form>
   `,

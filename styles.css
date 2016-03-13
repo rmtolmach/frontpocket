@@ -4,11 +4,27 @@ body { margin: 2em; }*/
 /*button { padding: 0.2em; font-size: 14px}
 * { font-family: Arial; }*/
 
-/*Form Page*/
+/*ALL PAGES*/
+.title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
+  color: #5d4124;
+}
+a {
+  text-decoration: none;
+  font-family: 'Muli', sans-serif;
+  color: #5988b9;
+}
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+/*FORM PAGE*/
 body {
   margin: auto 0;
   text-align: center;
-
 }
 /*large display*/
 @media screen and (min-width: 45.5em) {
@@ -20,23 +36,25 @@ body {
   }
 }
 /*large display*/
-@media screen and (min-width: 45.5em) {
+.form-page {
+  background-color: white;
+  margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  width: 90%;
+}
+
+@media screen and (min-width: 28.75em) {
   .form-page {
-    background-color: white;
-    width: 30%;
-    margin: 0 auto;
-    padding-top: 1em;
-    padding-bottom: 2em;
+    width: 70%;
+
   }
 }
 
-.form-page {
-}
-
-h1 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 3em;
-  color: #5d4124;
+@media screen and (min-width: 45.5em) {
+  .form-page {
+    width: 50%;
+  }
 }
 
 h2 {
@@ -71,9 +89,30 @@ select {
 }
 
 /*GAMES SHOW PAGE*/
-.show-body {
+
+.no-games-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1em;
   background-color: white;
+
 }
+
+/*for medium displays*/
+@media screen and (min-width: 28.75em) {
+  .no-games-container {
+    width: 75%;
+    /*background-image: url(http://media.giphy.com/media/138i1MiNVi9P0Y/giphy.gif);*/
+  }
+}
+
+/*for larger displays*/
+@media screen and (min-width: 50.5em) {
+  .no-games-container {
+    width: 50%;
+  }
+}
+
 .games li {
   list-style-type: none;
   text-align: left;
@@ -121,9 +160,8 @@ select {
   color: white;
 }
 
-a:hover {
-  text-decoration: none;
-  color: white;
+.youtube:hover {
+  color: hotpink;
 }
 /*label {
   display: inline-block;

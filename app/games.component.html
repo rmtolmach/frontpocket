@@ -1,5 +1,4 @@
-<div class="show-body">
-<h1>{{title}}</h1>
+<h1 class="title">Back Pocket Games</h1>
 
 <a class="back" href="/">back</a>
 
@@ -7,21 +6,21 @@
   <h1>Wait for it...</h1>
 </div>
 
-  <div *ngIf="!pendingRequest && matchingGames.length === 0">
-    <h1>No games fit your search.</h1>
+  <div class="no-games-container" *ngIf="!pendingRequest && matchingGames.length === 0">
+    <h2>No games match your search.</h2>
     <h2>How about a dance party?</h2>
-    <p class="youtube">Here are some overplayed jams that children love:</p>
+    <p class="jams">Here are some overplayed jams that children love:</p>
     <div class="songlink">
-      <a href="https://youtu.be/y6Sxv-sUYtM">Happy - Pharrell Williams</a>
+      <a class="youtube" href="https://youtu.be/y6Sxv-sUYtM">Happy - Pharrell Williams</a>
     </div>
     <div class="songlink">
-      <a href="https://youtu.be/OPf0YbXqDm0">Uptown Funk - Bruno Mars</a>
+      <a class="youtube" href="https://youtu.be/OPf0YbXqDm0">Uptown Funk - Bruno Mars</a>
     </div>
     <div class="songlink">
-      <a href="https://youtu.be/pIOOwhmkoLo">Party Rock Anthem - LMFAO</a>
+      <a class="youtube" href="https://youtu.be/pIOOwhmkoLo">Party Rock Anthem - LMFAO</a>
     </div>
     <div class="songlink">
-      <a href="https://youtu.be/M11SvDtPBhA">Party In The U.S.A. - Miley Cyrus</a>
+      <a class="youtube" href="https://youtu.be/M11SvDtPBhA">Party In The U.S.A. - Miley Cyrus</a>
     </div>
 
   </div>
@@ -39,5 +38,4 @@
         {{game.noise}}
       </li>
     </ul>
-</div>
 </div>
