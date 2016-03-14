@@ -3,7 +3,7 @@
 <a class="back" href="/">back</a>
 
   <div *ngIf="pendingRequest">
-    <h1>Wait for it...</h1>
+    <div class="loader">Wait for it...</div>
   </div>
 
   <div *ngIf="!pendingRequest && desperate">
