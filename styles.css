@@ -9,6 +9,10 @@ body { margin: 2em; }*/
   font-family: 'Permanent Marker', cursive;
   font-size: 3em;
   color: #5d4124;
+  background-color: #5988b9;
+  padding: .7em 0;
+  border-radius: 4px;
+  margin-top: -10px;
 }
 a {
   text-decoration: none;
@@ -25,7 +29,7 @@ a:hover {
 body {
   margin: auto 0;
   text-align: center;
-  background-color: #5988b9;
+  /*background-color: #5988b9;*/
 
 }
 /*large display*/
@@ -56,7 +60,12 @@ body {
   .form-page {
     width: 50%;
     background-color: white;
+    opacity: .8;
   }
+}
+
+.game-form {
+  margin: 0 -10;
 }
 
 h2 {
@@ -66,15 +75,20 @@ h2 {
   margin: 5px auto;
 }
 
-button {
+.button {
   margin-top: 20px;
   font-family: 'Muli', sans-serif;
   background-color: grey;
   border: none;
-  padding: 15px 30px;
+  padding: 8px 15px;
   border-radius: 4px;
   cursor: pointer; cursor: hand;
   font-size: 1.5em;
+}
+
+a.button {
+  padding: 9px 15px 11px 15px;
+  color: black;
 }
 
 label span {
