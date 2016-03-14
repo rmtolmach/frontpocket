@@ -10,8 +10,12 @@
     <h2>Play this!</h2>
     <ul class="games">
       <li>
-        <span class="game-name">{{ randomGame.name }}</span>
-        <span class="description">{{randomGame.description}}</span>
+        <span class="game-name">
+          {{ randomGame.name }}
+        </span>
+        <span class="description">
+          {{randomGame.description}}
+        </span>
     </li>
     </ul>
   </div>
@@ -21,16 +25,16 @@
     <h2>How about a dance party?</h2>
     <p class="jams">Here are some overplayed jams that children love:</p>
     <div class="songlink">
-      <a class="youtube" href="https://youtu.be/y6Sxv-sUYtM">Happy - Pharrell Williams</a>
+      <a class="youtube" href="https://youtu.be/y6Sxv-sUYtM" target="_blank">Happy - Pharrell Williams</a>
     </div>
     <div class="songlink">
-      <a class="youtube" href="https://youtu.be/OPf0YbXqDm0">Uptown Funk - Bruno Mars</a>
+      <a class="youtube" href="https://youtu.be/OPf0YbXqDm0" target="_blank">Uptown Funk - Bruno Mars</a>
     </div>
     <div class="songlink">
-      <a class="youtube" href="https://youtu.be/pIOOwhmkoLo">Party Rock Anthem - LMFAO</a>
+      <a class="youtube" href="https://youtu.be/pIOOwhmkoLo" target="_blank">Party Rock Anthem - LMFAO</a>
     </div>
     <div class="songlink">
-      <a class="youtube" href="https://youtu.be/M11SvDtPBhA">Party In The U.S.A. - Miley Cyrus</a>
+      <a class="youtube" href="https://youtu.be/M11SvDtPBhA" target="_blank">Party In The U.S.A. - Miley Cyrus</a>
     </div>
   </div>
 
@@ -41,8 +45,12 @@
     <ul class="games">
       <li *ngFor="#game of matchingGames">
 
-        <span class="game-name">{{ game.name }}</span>
-        <span class="description">{{game.description}}</span>
+        <span class="game-name">
+          {{ game.name }}
+        </span>
+        <span class="description">
+          {{game.description}}
+        </span>
         TIME: {{game.time_range}}
         Players: {{game.num_of_players}}
         {{game.noise}}
