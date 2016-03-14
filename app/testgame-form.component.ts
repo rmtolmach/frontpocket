@@ -16,7 +16,7 @@ export class TestGameFormComponent {
     private _router: Router) {}
 
     noise = ['Outside Voice', 'Inside Voice']
-    equipment = ['none', 'ball (soft)', 'ball', 'boombox', 'hula-hoops']
+    equipment = ['None', 'ball (soft)', 'ball', 'boombox', 'hula-hoops']
     time = [5,10,15,20,25,30]
     players = [1,2,3,4,5,6,7,8,9,10,15,20,30,40,50]
 

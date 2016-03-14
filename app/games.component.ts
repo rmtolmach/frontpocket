@@ -53,7 +53,7 @@ export class GamesComponent implements OnInit {
               return this.randomGame;
             } else {
 
-              if (this._chosenEquip === "none"){
+              if (this._chosenEquip === "None"){
                 this.matchingGames = games.filter((game)=> game.equipment === null);
               } else {
                 this.matchingGames = games.filter((game)=> game.equipment === this._chosenEquip);

@@ -56,7 +56,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                             return _this.randomGame;
                         }
                         else {
-                            if (_this._chosenEquip === "none") {
+                            if (_this._chosenEquip === "None") {
                                 _this.matchingGames = games.filter(function (game) { return game.equipment === null; });
                             }
                             else {

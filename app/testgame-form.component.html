@@ -27,7 +27,7 @@
 
       <div class="field">
         <label for="equipInput"><span>Equipment</span></label>
-        <select ngControl="equipment" name="equipment" #e="ngForm" ngModel="none">
+        <select ngControl="equipment" name="equipment" #e="ngForm" ngModel="None">
           <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
         </select>
       </div>
