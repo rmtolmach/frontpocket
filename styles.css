@@ -41,7 +41,7 @@ body {
   body {
     margin: auto 0;
     text-align: center;
-    background-image: url("app/converse-fields.jpg");
+    background: url("app/converse-fields.jpg") no-repeat center center fixed;
     background-size: cover;
   }
 }
@@ -166,21 +166,42 @@ select {
 @media screen and (min-width: 40.5em) {
   .games li {
     width: 60%;
+    background-color: white;
+    padding: 2em;
+    opacity: .9;
+    margin-bottom: 0;
   }
 }
 
 .games .game-name {
-  color: red;
+  color: #5988b9;
   display: block;
   font-size: 1.3em;
-  border: blue solid 3px;
+  border: #f9cc68 solid 4px;
   padding: .3em;
   margin-bottom: .2em;
+  border-radius: 4px;
+  margin: auto;
+  text-align: center;
+}
+
+/*large displays*/
+@media screen and (min-width: 40.5em) {
+  .games .game-name {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 28.75em) {
+  .games .game-name {
+    width: 85%;
+  }
 }
 
 .games .description {
   font-size: 1.2em;
   line-height: 1.3em;
+  color: #5d4124;
 }
 
 .back {
