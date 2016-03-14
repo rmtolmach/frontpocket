@@ -80,14 +80,15 @@ h2 {
 }
 
 .button {
-  margin-top: 20px;
+  margin: 15px auto;
   font-family: 'Muli', sans-serif;
   background-color: #f9cc68;
   border: none;
-  padding: 8px 15px;
+  padding: 8px 50px;
   border-radius: 4px;
   cursor: pointer; cursor: hand;
   font-size: 1.5em;
+  display: block;
 }
 
 .button:hover {
@@ -96,7 +97,8 @@ h2 {
 }
 
 a.button {
-  padding: 9px 15px 11px 15px;
+  width: 55%;
+  padding: 9px 15px;
   color: black;
   background-image: none;
   background-color: #e34738;
