@@ -45,7 +45,7 @@ body {
     background-size: cover;
   }
 }
-/*large display*/
+
 .form-page {
   margin: 0 auto;
   padding-top: 1em;
@@ -59,7 +59,7 @@ body {
     background-color: white;
   }
 }
-
+/*large display*/
 @media screen and (min-width: 45.5em) {
   .form-page {
     width: 50%;
@@ -74,7 +74,7 @@ body {
 
 h2 {
   font-family: 'Muli', sans-serif;
-  color: grey;
+  color: #5d4124;
   font-size: 2.2em;
   margin: 5px auto;
 }
@@ -82,7 +82,7 @@ h2 {
 .button {
   margin-top: 20px;
   font-family: 'Muli', sans-serif;
-  background-color: grey;
+  background-color: #f9cc68;
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
@@ -90,9 +90,21 @@ h2 {
   font-size: 1.5em;
 }
 
+.button:hover {
+  background-image: url(http://media.giphy.com/media/138i1MiNVi9P0Y/giphy.gif);
+
+}
+
 a.button {
   padding: 9px 15px 11px 15px;
   color: black;
+  background-image: none;
+  background-color: #e34738;
+}
+
+a.button:hover {
+  background-color: brown;
+  background-image: none;
 }
 
 label span {
@@ -184,6 +196,7 @@ select {
   color: hotpink;
 }
 
+/*animation while the page is loading*/
 .loader:before,
 .loader:after,
 .loader {
@@ -240,66 +253,11 @@ select {
     box-shadow: 0 2.5em 0 0 #ffffff;
   }
 }
-/*label {
-  display: inline-block;
-  width: 3em;
-  margin: .5em 0;
-  color: green;
-  font-weight: bold;
-}*/
-/*
-input {
-  height: 2em;
-  font-size: 1em;
-  padding-left: .4em;
-}
-*/
-/*.form-page {
-  margin: auto;
-  width: 960px;
-  text-align: center;
-}
-
-select {
-
-}
-
-button {
-  margin-top: 20px;
-  font-family: Arial;
-  background-color: green;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 4px;
-  cursor: pointer; cursor: hand;
-  font-size: 1.5em;
-}
-button:hover {
+/*button:hover {
   background-color: #cfd8dc;
 }*/
 
-/*.selected {
-  background-color: #CFD8DC !important;
-  color: white;
-}
-.games {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 10em;
-}
-.games li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0em;
-  /*height: 1.6em;*/
-  /*border-radius: 4px;
-  width: 500px;
-}
-.games li.selected:hover {
+/*.games li.selected:hover {
   color: white;
 }
 .games li:hover {
