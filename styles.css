@@ -65,6 +65,9 @@ body {
     width: 50%;
     background-color: white;
     opacity: .8;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: #5d4124 1px solid;
   }
 }
 
@@ -97,16 +100,22 @@ h2 {
 }
 
 a.button {
-  width: 55%;
+  width: 260px;
   padding: 9px 15px;
   color: black;
   background-image: none;
   background-color: #e34738;
+  font-size: 1.3em;
 }
 
 a.button:hover {
   background-color: brown;
   background-image: none;
+}
+
+.button-text {
+  display: block;
+  font-size: .5em;
 }
 
 label span {
@@ -154,6 +163,17 @@ select {
   margin: 0 auto;
   margin-bottom: 1em;
 }
+
+.games li:first-of-type {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.games li:last-of-type {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
 
 /*for medium displays*/
 @media screen and (min-width: 28.75em) {
