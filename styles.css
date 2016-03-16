@@ -148,7 +148,10 @@ select {
 @media screen and (min-width: 28.75em) {
   .no-games-container {
     width: 75%;
-    /*background-image: url(http://media.giphy.com/media/138i1MiNVi9P0Y/giphy.gif);*/
+    opacity: .9;
+    padding: 2px;
+    margin-top: 15px;
+    border-radius: 4px;
   }
 }
 
@@ -156,6 +159,10 @@ select {
 @media screen and (min-width: 50.5em) {
   .no-games-container {
     width: 50%;
+    opacity: .9;
+    padding: 2px;
+    margin-top: 15px;
+    border-radius: 4px;
   }
 }
 
@@ -241,8 +248,26 @@ ul.games {
   color: white;
 }
 
+/*no games page*/
 .youtube:hover {
   color: hotpink;
+}
+
+.songlink {
+  padding: 3px;
+}
+
+.no-games {
+  font-family: 'Muli', sans-serif;
+  margin-top: 1.5em;
+  margin-bottom: 1.1em;
+  color: #5d4124;
+}
+
+.dance-party {
+  margin: -.2em 0;
+  text-decoration: none;
+  color: #5988b9;
 }
 
 /*animation while the page is loading*/
