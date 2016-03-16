@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, router_1;
+    var core_1, common_1, router_1, router_2;
     var TestGameFormComponent;
     return {
         setters:[
@@ -22,6 +22,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+                router_2 = router_1_1;
             }],
         execute: function() {
             TestGameFormComponent = (function () {
@@ -38,7 +39,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                 };
                 TestGameFormComponent = __decorate([
                     core_1.Component({
-                        directives: [common_1.FORM_DIRECTIVES],
+                        directives: [common_1.FORM_DIRECTIVES, router_2.ROUTER_DIRECTIVES],
                         templateUrl: 'app/testgame-form.component.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router])
@@ -49,10 +50,4 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
         }
     }
 });
-//   goBack() {
-//     window.history.back();
-// }
-//
-//
-// }
 //# sourceMappingURL=testgame-form.component.js.map

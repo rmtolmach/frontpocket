@@ -41,7 +41,7 @@
       </div>
 
       <button type="submit" name="action" value="go" class="button">Go!</button>
-      <a class="button" href="games?type=random">
+      <a [routerLink]="['Games', { type: 'random' }]" class="button">
         <span class="button-text">Give me anything!</span>
         I'm Feeling Desperate</a>
     </form>

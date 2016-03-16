@@ -7,7 +7,7 @@ import {Router, RouteParams} from 'angular2/router';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 @Component({
-  directives: [FORM_DIRECTIVES],
+  directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES],
   templateUrl: 'app/testgame-form.component.html'
 })
 export class TestGameFormComponent {
@@ -23,13 +23,6 @@ export class TestGameFormComponent {
   onSubmit(value: string): void {
     console.log('you submitted value: ', value);
 
-    this._router.navigate(['Games',  value ])
+    this._router.navigate(['Games', value ])
   }
 }
-
-//   goBack() {
-//     window.history.back();
-// }
-//
-//
-// }
