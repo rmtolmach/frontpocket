@@ -10,7 +10,7 @@
           class="game-form">
 
       <div class="field">
-        <label for="timeInput"><span>Time</span></label>
+        <label for="timeInput"><span>Time:</span></label>
         <select ngControl="time" name="time" #t="ngForm" ngModel="doesntmatter">
           <option value="doesntmatter">Doesn't Matter</option>
           <option *ngFor="#t of time" [value]="t"> {{t}} </option>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="field">
-        <label for="playersInput"><span>Number of Players</span></label>
+        <label for="playersInput"><span>Number of Players:</span></label>
         <select ngControl="players" name="players" #p="ngForm" ngModel="whatever">
           <option value="whatever">Whatever</option>
           <option *ngFor="#p of players" [value]="p"> {{p}} </option>
@@ -26,14 +26,14 @@
       </div>
 
       <div class="field">
-        <label for="equipInput"><span>Equipment</span></label>
+        <label for="equipInput"><span>Equipment:</span></label>
         <select ngControl="equipment" name="equipment" #e="ngForm" ngModel="None">
           <option *ngFor="#e of equipment" [value]="e"> {{e}} </option>
         </select>
       </div>
 
       <div class="field">
-        <label for="noiseInput"><span>Noise Level</span></label>
+        <label for="noiseInput"><span>Noise Level:</span></label>
         <select ngControl="noise" name="noise" #n="ngForm" ngModel="whatever">
           <option value="whatever">Whatever</option>
           <option *ngFor="#n of noise" [value]="n"> {{n}} </option>
