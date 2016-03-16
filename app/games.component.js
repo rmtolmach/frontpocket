@@ -76,7 +76,7 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                             }
                             else {
                                 _this.matchingGames = _this.matchingGames.filter(function (game) {
-                                    return Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)) - (parseInt(game.num_of_players) - 1))).map(function (_, i) { return i + parseInt(game.num_of_players); }).includes(parseInt(_this._chosenPlayers));
+                                    return Array.apply(null, Array(parseFloat(game.num_of_players.slice(-2)) - (parseFloat(game.num_of_players) - 1))).map(function (_, i) { return i + parseFloat(game.num_of_players); }).includes(parseFloat(_this._chosenPlayers));
                                 });
                             }
                             if (_this._chosenTime === "doesntmatter") {
@@ -84,19 +84,18 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                             }
                             else {
                                 _this.matchingGames = _this.matchingGames.filter(function (game) {
-                                    return Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1))).map(function (_, i) { return i + parseInt(game.time_range); }).includes(parseInt(_this._chosenTime));
+                                    return Array.apply(null, Array(parseFloat(game.time_range.slice(-2)) - (parseFloat(game.time_range) - 1))).map(function (_, i) { return i + parseFloat(game.time_range); }).includes(parseFloat(_this._chosenTime));
                                 });
                             }
                             _this.pendingRequest = false;
                             return _this.matchingGames;
                         }
-                    }, function (error) { return _this.errorMessage = error; });
+                    });
                     console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
                 };
                 GamesComponent = __decorate([
                     core_1.Component({
-                        // selector: 'my-games',
-                        templateUrl: 'app/games.component.html',
+                        templateUrl: 'app/games.component.html'
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, game_service_1.GameService])
                 ], GamesComponent);

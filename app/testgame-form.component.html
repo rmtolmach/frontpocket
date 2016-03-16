@@ -1,8 +1,8 @@
 <div class="form-page">
   <h1 class="title">Back Pocket Games</h1>
 
-  <a href="http://localhost:3001/auth/facebook">Login with facebook</a>
-  <a href="http://localhost:3001/logout">Logout</a>
+  <!-- <a href="http://localhost:3001/auth/facebook">Login with facebook</a>
+  <a href="http://localhost:3001/logout">Logout</a> -->
     <h2 class="ui header">Find a Game</h2>
 <!-- ngForm is automatically attached to any form tags I have     -->
     <form #f="ngForm"
@@ -41,7 +41,7 @@
       </div>
 
       <button type="submit" name="action" value="go" class="button">Go!</button>
-      <a class="button" href="games?type=random">
+      <a [routerLink]="['Games', { type: 'random' }]" class="button">
         <span class="button-text">Give me anything!</span>
         I'm Feeling Desperate</a>
     </form>

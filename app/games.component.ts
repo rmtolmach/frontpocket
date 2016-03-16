@@ -6,10 +6,7 @@ import {GameService} from './game.service';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 @Component({
-    // selector: 'my-games',
-    templateUrl: 'app/games.component.html',
-// this tells Angular that it exists
-    // directives: [GameFormComponent]
+    templateUrl: 'app/games.component.html'
 })
 // AppComponent is the same name as the file. the word component is the key. AppComponent is the top level component in the application. There should be only one instance of GameService in the whole app.
 export class GamesComponent implements OnInit {
@@ -69,19 +66,18 @@ export class GamesComponent implements OnInit {
                 this.matchingGames = this.matchingGames;
               } else {
                 this.matchingGames = this.matchingGames.filter((game)=>
-                  Array.apply(null, Array(parseInt(game.num_of_players.slice(-2)) - (parseInt(game.num_of_players) - 1) )).map(function (_, i) {return i + parseInt(game.num_of_players);}).includes(parseInt(this._chosenPlayers)));
+                  Array.apply(null, Array(parseFloat(game.num_of_players.slice(-2)) - (parseFloat(game.num_of_players) - 1) )).map(function (_, i) {return i + parseFloat(game.num_of_players);}).includes(parseFloat(this._chosenPlayers)));
               }
               if (this._chosenTime === "doesntmatter") {
                 this.matchingGames = this.matchingGames;
               } else {
                 this.matchingGames = this.matchingGames.filter((game)=>
-                  Array.apply(null, Array(parseInt(game.time_range.slice(-2)) - (parseInt(game.time_range) - 1) )).map(function (_, i) {return i + parseInt(game.time_range);}).includes(parseInt(this._chosenTime)));
+                  Array.apply(null, Array(parseFloat(game.time_range.slice(-2)) - (parseFloat(game.time_range) - 1) )).map(function (_, i) {return i + parseFloat(game.time_range);}).includes(parseFloat(this._chosenTime)));
               }
             this.pendingRequest = false;
             return this.matchingGames;
-          }},
-
-          error =>  this.errorMessage = <any>error);
+            }
+          });
 console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
 }
 
