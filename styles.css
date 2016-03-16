@@ -1,22 +1,17 @@
-/*h2 { color: #444; font-weight: lighter; }
-body { margin: 2em; }*/
-/*body, input[text], button { color: #888; font-family: Cambria, Georgia; }*/
-/*button { padding: 0.2em; font-size: 14px}
-* { font-family: Arial; }*/
-
 /*ALL PAGES*/
 .title {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Permanent Marker', serif;
   font-size: 3em;
   color: #5d4124;
   background-color: #5988b9;
   padding: .7em 0;
-  border-radius: 4px;
-  margin-top: -10px;
+  margin-top: -16px;
 }
 @media screen and (min-width: 45.5em) {
   .title {
     background-color: white;
+    margin: -.3em auto .3em;
+    opacity: .9;
   }
 }
 
@@ -79,13 +74,14 @@ h2 {
   font-family: 'Muli', sans-serif;
   color: #5d4124;
   font-size: 2.2em;
-  margin: 5px auto;
+  margin: .9em auto .3em;
+  text-decoration: underline;
 }
 
 .button {
   margin: 15px auto;
   font-family: 'Muli', sans-serif;
-  background-color: #f9cc68;
+  background-color: #43a101;
   border: none;
   padding: 8px 50px;
   border-radius: 4px;
@@ -104,7 +100,7 @@ a.button {
   padding: 9px 15px;
   color: black;
   background-image: none;
-  background-color: #e34738;
+  background-color: #f9cc68;
   font-size: 1.3em;
 }
 
@@ -156,6 +152,10 @@ select {
   }
 }
 
+ul.games {
+  padding-left: 0;
+}
+
 .games li {
   list-style-type: none;
   text-align: left;
@@ -173,7 +173,6 @@ select {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
-
 
 /*for medium displays*/
 @media screen and (min-width: 28.75em) {
@@ -226,7 +225,7 @@ select {
 
 .back {
   font-family: 'Muli', sans-serif;
-  background-color: #5988b9;
+  background-color: #43a101;
   border: none;
   padding: 7px 15px;
   border-radius: 4px;
