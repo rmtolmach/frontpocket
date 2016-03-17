@@ -20,22 +20,3 @@ The [backend](https://github.com/rmtolmach/frontpocket) is a Rails api with a Mo
 ## Dependencies
 * Typescript
 * Games API (see BackPocket repo linked above)
-
-
-Things you may want to cover:
-
-* Ruby version 2.2.3
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
