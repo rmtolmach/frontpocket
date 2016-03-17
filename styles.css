@@ -207,11 +207,10 @@ ul.games {
 }
 
 .games .game-name {
-  color: #5988b9;
+  color: #5d4124;
   display: block;
-  font-size: 1.3em;
+  font-size: 1.8em;
   border: #f9cc68 solid 4px;
-  padding: .3em;
   margin-bottom: .2em;
   border-radius: 4px;
   margin: auto;
@@ -327,37 +326,3 @@ ul.games {
     box-shadow: 0 2.5em 0 0 #ffffff;
   }
 }
-/*button:hover {
-  background-color: #cfd8dc;
-}*/
-
-/*.games li.selected:hover {
-  color: white;
-}
-.games li:hover {
-  color: #607D8B;
-  background-color: #EEE;
-  left: .1em;
-}
-.games .text {
-  position: relative;
-  top: -3px;
-}
-.games .game-name {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0em 0.7em;
-  background-color: #607D8B;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  margin-right: .8em;
-  border-radius: 4px 0px 0px 4px;
-}*/
-
-/*nav a:visited, a:link {
-  color: #607D8B;
-}*/

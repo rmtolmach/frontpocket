@@ -91,7 +91,6 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
                             return _this.matchingGames;
                         }
                     });
-                    console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
                 };
                 GamesComponent = __decorate([
                     core_1.Component({

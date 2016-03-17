@@ -77,13 +77,7 @@ export class GamesComponent implements OnInit {
             this.pendingRequest = false;
             return this.matchingGames;
             }
-          });
-console.log(this._chosenEquip, this._chosenNoise, this._chosenTime);
-}
-
-  // onSelect(game: Game) { this.selectedGame = game; }
-
-  // gotoForm() {
-  //   this._router.navigate(['GameForm', { id: this.selectedGame.name }]);
-  // }
+          }
+        );
+  }
 }
