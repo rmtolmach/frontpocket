@@ -1,8 +1,3 @@
-// export interface Game {
-//   id: number;
-//   name: string;
-//   description: string;
-// }
 System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;

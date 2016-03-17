@@ -24,27 +24,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                 Observable_1 = Observable_1_1;
             }],
         execute: function() {
-            // parentheses are important!
             GameService = (function () {
                 function GameService(http) {
                     this.http = http;
-                    // getGame(id: number) {
-                    //   return Promise.resolve(GAMES).then(
-                    //     games => games.filter(game => game.id === id)[0]
-                    // );
-                    // }
-                    this._gamesUrl = 'http://ec2-52-37-233-63.us-west-2.compute.amazonaws.com/games'; // URL to JSON file
+                    this._gamesUrl = 'http://api.backpocketgames.club/games'; // URL to JSON file
                 }
                 //this get request won't go out until something subscribes to the observable (in this case, the GameComponent)
                 GameService.prototype.getGames = function () {
                     return this.http.get(this._gamesUrl)
                         .map(function (res) { return res.json(); })
-                        .do(function (data) { return console.log(data); })
                         .catch(this.handleError);
                 };
                 GameService.prototype.handleError = function (error) {
-                    // in a real world app, we may send the error to some remote logging infrastructure
-                    // instead of just logging it to the console
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };

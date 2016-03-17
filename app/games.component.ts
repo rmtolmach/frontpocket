@@ -8,7 +8,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
 @Component({
     templateUrl: 'app/games.component.html'
 })
-// AppComponent is the same name as the file. the word component is the key. AppComponent is the top level component in the application. There should be only one instance of GameService in the whole app.
+
 export class GamesComponent implements OnInit {
   games: Game[] = [];
   matchingGames: Game[] = [];
@@ -21,9 +21,7 @@ export class GamesComponent implements OnInit {
   private _chosenTime: string;
   private _chosenPlayers: string;
   private _chosenType: string;
-  // selectedGame: Game;
   errorMessage: string;
-// // It can infer what type it is from the GAMES array below, so we don't need to tell it.
   constructor(
     private _router:Router,
     private routeParams: RouteParams,

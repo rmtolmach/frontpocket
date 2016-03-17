@@ -10,6 +10,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/route
   directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES],
   templateUrl: 'app/testgame-form.component.html'
 })
+
 export class TestGameFormComponent {
 
   constructor(
@@ -21,8 +22,6 @@ export class TestGameFormComponent {
     players = [1,2,3,4,5,6,7,8,9,10,15,20,30,40,50]
 
   onSubmit(value: string): void {
-    console.log('you submitted value: ', value);
-
     this._router.navigate(['Games', value ])
   }
 }

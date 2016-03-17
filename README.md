@@ -17,6 +17,11 @@ The [backend](https://github.com/rmtolmach/frontpocket) is a Rails api with a Mo
 3. Run `npm install`
 4. Run `npm start`
 
+## Dependencies
+* Typescript
+* Games API (see BackPocket repo linked above)
+
+
 Things you may want to cover:
 
 * Ruby version 2.2.3

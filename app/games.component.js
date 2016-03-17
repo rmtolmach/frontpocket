@@ -25,7 +25,6 @@ System.register(['angular2/core', 'angular2/router', './game.service'], function
             }],
         execute: function() {
             GamesComponent = (function () {
-                // // It can infer what type it is from the GAMES array below, so we don't need to tell it.
                 function GamesComponent(_router, routeParams, _gameService) {
                     this._router = _router;
                     this.routeParams = routeParams;

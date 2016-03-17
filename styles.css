@@ -25,7 +25,6 @@ a:hover {
   color: white;
 }
 
-
 /*FORM PAGE*/
 body {
   margin: auto 0;
@@ -95,7 +94,6 @@ h2 {
 
 .button:hover {
   background-image: url(http://media.giphy.com/media/138i1MiNVi9P0Y/giphy.gif);
-
 }
 
 a.button {
@@ -108,7 +106,6 @@ a.button {
   -webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 21px 0px #f9cc68;
-
 }
 
 a.button:hover {
@@ -126,7 +123,6 @@ label span {
   font-family: 'Muli', sans-serif;
   font-size: 1.5em;
   color: #5d4124;
-
 }
 
 select {
@@ -135,13 +131,11 @@ select {
 }
 
 /*GAMES SHOW PAGE*/
-
 .no-games-container {
   width: 90%;
   margin: 0 auto;
   margin-bottom: 1em;
   background-color: white;
-
 }
 
 /*for medium displays*/

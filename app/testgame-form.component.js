@@ -34,7 +34,6 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router'], functio
                     this.players = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 30, 40, 50];
                 }
                 TestGameFormComponent.prototype.onSubmit = function (value) {
-                    console.log('you submitted value: ', value);
                     this._router.navigate(['Games', value]);
                 };
                 TestGameFormComponent = __decorate([
