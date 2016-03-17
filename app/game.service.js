@@ -33,7 +33,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                     //     games => games.filter(game => game.id === id)[0]
                     // );
                     // }
-                    this._gamesUrl = 'http://localhost:3001/games'; // URL to JSON file
+                    this._gamesUrl = 'http://ec2-52-37-233-63.us-west-2.compute.amazonaws.com/games'; // URL to JSON file
                 }
                 //this get request won't go out until something subscribes to the observable (in this case, the GameComponent)
                 GameService.prototype.getGames = function () {

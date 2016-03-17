@@ -25,7 +25,7 @@ export class GameService {
   // );
   // }
 
-  private _gamesUrl = 'http://localhost:3001/games'; // URL to JSON file
+  private _gamesUrl = 'http://ec2-52-37-233-63.us-west-2.compute.amazonaws.com/games'; // URL to JSON file
 
   private handleError (error: Response) {
       // in a real world app, we may send the error to some remote logging infrastructure
