@@ -11,7 +11,7 @@ The [backend](https://github.com/rmtolmach/frontpocket) is a Rails api with a Mo
 
 [Trello Board](https://trello.com/b/2h45Luv0/backpocket-games)
 
-##Starting the project
+## Starting the project
 1. Download and install npm (https://nodejs.org/en/)
 2. Clone this repo
 3. Run `npm install`
